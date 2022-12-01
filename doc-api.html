@@ -1,0 +1,1242 @@
+<!DOCTYPE html>
+<!-- saved from url=(0097)https://dev-pf.onlineformapro.com/wcopy/os/api/documentation/index.php#reporting-get-suivi-post-2 -->
+<html><head><meta http-equiv="Content-Type" content="text/html; charset=UTF-8"><title>Onlineformapro LMS REST API</title><link rel="stylesheet" href="./Onlineformapro LMS REST API_files/font-awesome.min.css"><style>@import url('https://fonts.googleapis.com/css?family=Roboto:400,700|Inconsolata|Raleway:200');.hljs-comment,.hljs-title{color:#8e908c}.hljs-variable,.hljs-attribute,.hljs-tag,.hljs-regexp,.ruby .hljs-constant,.xml .hljs-tag .hljs-title,.xml .hljs-pi,.xml .hljs-doctype,.html .hljs-doctype,.css .hljs-id,.css .hljs-class,.css .hljs-pseudo{color:#c82829}.hljs-number,.hljs-preprocessor,.hljs-pragma,.hljs-built_in,.hljs-literal,.hljs-params,.hljs-constant{color:#f5871f}.ruby .hljs-class .hljs-title,.css .hljs-rules .hljs-attribute{color:#eab700}.hljs-string,.hljs-value,.hljs-inheritance,.hljs-header,.ruby .hljs-symbol,.xml .hljs-cdata{color:#718c00}.css .hljs-hexcolor{color:#3e999f}.hljs-function,.python .hljs-decorator,.python .hljs-title,.ruby .hljs-function .hljs-title,.ruby .hljs-title .hljs-keyword,.perl .hljs-sub,.javascript .hljs-title,.coffeescript .hljs-title{color:#4271ae}.hljs-keyword,.javascript .hljs-function{color:#8959a8}.hljs{display:block;background:white;color:#4d4d4c;padding:.5em}.coffeescript .javascript,.javascript .xml,.tex .hljs-formula,.xml .javascript,.xml .vbscript,.xml .css,.xml .hljs-cdata{opacity:.5}.right .hljs-comment{color:#969896}.right .css .hljs-class,.right .css .hljs-id,.right .css .hljs-pseudo,.right .hljs-attribute,.right .hljs-regexp,.right .hljs-tag,.right .hljs-variable,.right .html .hljs-doctype,.right .ruby .hljs-constant,.right .xml .hljs-doctype,.right .xml .hljs-pi,.right .xml .hljs-tag .hljs-title{color:#c66}.right .hljs-built_in,.right .hljs-constant,.right .hljs-literal,.right .hljs-number,.right .hljs-params,.right .hljs-pragma,.right .hljs-preprocessor{color:#de935f}.right .css .hljs-rule .hljs-attribute,.right .ruby .hljs-class .hljs-title{color:#f0c674}.right .hljs-header,.right .hljs-inheritance,.right .hljs-name,.right .hljs-string,.right .hljs-value,.right .ruby .hljs-symbol,.right .xml .hljs-cdata{color:#b5bd68}.right .css .hljs-hexcolor,.right .hljs-title{color:#8abeb7}.right .coffeescript .hljs-title,.right .hljs-function,.right .javascript .hljs-title,.right .perl .hljs-sub,.right .python .hljs-decorator,.right .python .hljs-title,.right .ruby .hljs-function .hljs-title,.right .ruby .hljs-title .hljs-keyword{color:#81a2be}.right .hljs-keyword,.right .javascript .hljs-function{color:#b294bb}.right .hljs{display:block;overflow-x:auto;background:#1d1f21;color:#c5c8c6;padding:.5em;-webkit-text-size-adjust:none}.right .coffeescript .javascript,.right .javascript .xml,.right .tex .hljs-formula,.right .xml .css,.right .xml .hljs-cdata,.right .xml .javascript,.right .xml .vbscript{opacity:.5}body{color:black;background:white;font:400 14px / 1.42 'Roboto',Helvetica,sans-serif}header{border-bottom:1px solid #f2f2f2;margin-bottom:12px}h1,h2,h3,h4,h5{color:black;margin:12px 0}h1 .permalink,h2 .permalink,h3 .permalink,h4 .permalink,h5 .permalink{margin-left:0;opacity:0;transition:opacity .25s ease}h1:hover .permalink,h2:hover .permalink,h3:hover .permalink,h4:hover .permalink,h5:hover .permalink{opacity:1}.triple h1 .permalink,.triple h2 .permalink,.triple h3 .permalink,.triple h4 .permalink,.triple h5 .permalink{opacity:.15}.triple h1:hover .permalink,.triple h2:hover .permalink,.triple h3:hover .permalink,.triple h4:hover .permalink,.triple h5:hover .permalink{opacity:.15}h1{font:200 36px 'Raleway',Helvetica,sans-serif;font-size:36px}h2{font:200 36px 'Raleway',Helvetica,sans-serif;font-size:30px}h3{font-size:100%;text-transform:uppercase}h5{font-size:100%;font-weight:normal}p{margin:0 0 10px}p.choices{line-height:1.6}a{color:#428bca;text-decoration:none}li p{margin:0}hr.split{border:0;height:1px;width:100%;padding-left:6px;margin:12px auto;background-image:linear-gradient(to right, rgba(0,0,0,0) 20%, rgba(0,0,0,0.2) 51.4%, rgba(255,255,255,0.2) 51.4%, rgba(255,255,255,0) 80%)}dl dt{float:left;width:130px;clear:left;text-align:right;overflow:hidden;text-overflow:ellipsis;white-space:nowrap;font-weight:700}dl dd{margin-left:150px}blockquote{color:rgba(0,0,0,0.5);font-size:15.5px;padding:10px 20px;margin:12px 0;border-left:5px solid #e8e8e8}blockquote p:last-child{margin-bottom:0}pre{background-color:#f5f5f5;padding:12px;border:1px solid #cfcfcf;border-radius:6px;overflow:auto}pre code{color:black;background-color:transparent;padding:0;border:none}code{color:#444;background-color:#f5f5f5;font:'Inconsolata',monospace;padding:1px 4px;border:1px solid #cfcfcf;border-radius:3px}ul,ol{padding-left:2em}table{border-collapse:collapse;border-spacing:0;margin-bottom:12px}table tr:nth-child(2n){background-color:#fafafa}table th,table td{padding:6px 12px;border:1px solid #e6e6e6}.text-muted{opacity:.5}.note,.warning{padding:.3em 1em;margin:1em 0;border-radius:2px;font-size:90%}.note h1,.warning h1,.note h2,.warning h2,.note h3,.warning h3,.note h4,.warning h4,.note h5,.warning h5,.note h6,.warning h6{font-family:200 36px 'Raleway',Helvetica,sans-serif;font-size:135%;font-weight:500}.note p,.warning p{margin:.5em 0}.note{color:black;background-color:#f0f6fb;border-left:4px solid #428bca}.note h1,.note h2,.note h3,.note h4,.note h5,.note h6{color:#428bca}.warning{color:black;background-color:#fbf1f0;border-left:4px solid #c9302c}.warning h1,.warning h2,.warning h3,.warning h4,.warning h5,.warning h6{color:#c9302c}header{margin-top:24px}nav{position:fixed;top:24px;bottom:0;overflow-y:auto}nav .resource-group{padding:0}nav .resource-group .heading{position:relative}nav .resource-group .heading .chevron{position:absolute;top:12px;right:12px;opacity:.5}nav .resource-group .heading a{display:block;color:black;opacity:.7;border-left:2px solid transparent;margin:0}nav .resource-group .heading a:hover{text-decoration:none;background-color:bad-color;border-left:2px solid black}nav ul{list-style-type:none;padding-left:0}nav ul a{display:block;font-size:13px;color:rgba(0,0,0,0.7);padding:8px 12px;border-top:1px solid #d9d9d9;border-left:2px solid transparent;overflow:hidden;text-overflow:ellipsis;white-space:nowrap}nav ul a:hover{text-decoration:none;background-color:bad-color;border-left:2px solid black}nav ul>li{margin:0}nav ul>li:first-child{margin-top:-12px}nav ul>li:last-child{margin-bottom:-12px}nav ul ul a{padding-left:24px}nav ul ul li{margin:0}nav ul ul li:first-child{margin-top:0}nav ul ul li:last-child{margin-bottom:0}nav>div>div>ul>li:first-child>a{border-top:none}.preload *{transition:none !important}.pull-left{float:left}.pull-right{float:right}.badge{display:inline-block;float:right;min-width:10px;min-height:14px;padding:3px 7px;font-size:12px;color:#000;background-color:#f2f2f2;border-radius:10px;margin:-2px 0}.badge.get{color:#70bbe1;background-color:#d9edf7}.badge.head{color:#70bbe1;background-color:#d9edf7}.badge.options{color:#70bbe1;background-color:#d9edf7}.badge.put{color:#f0db70;background-color:#fcf8e3}.badge.patch{color:#f0db70;background-color:#fcf8e3}.badge.post{color:#93cd7c;background-color:#dff0d8}.badge.delete{color:#ce8383;background-color:#f2dede}.collapse-button{float:right}.collapse-button .close{display:none;color:#428bca;cursor:pointer}.collapse-button .open{color:#428bca;cursor:pointer}.collapse-button.show .close{display:inline}.collapse-button.show .open{display:none}.collapse-content{max-height:0;overflow:hidden;transition:max-height .3s ease-in-out}nav{width:220px}.container{max-width:940px;margin-left:auto;margin-right:auto}.container .row .content{margin-left:244px;width:696px}.container .row:after{content:'';display:block;clear:both}.container-fluid nav{width:22%}.container-fluid .row .content{margin-left:24%}.container-fluid.triple nav{width:16.5%;padding-right:1px}.container-fluid.triple .row .content{position:relative;margin-left:16.5%;padding-left:24px}.middle:before,.middle:after{content:'';display:table}.middle:after{clear:both}.middle{box-sizing:border-box;width:51.5%;padding-right:12px}.right{box-sizing:border-box;float:right;width:48.5%;padding-left:12px}.right a{color:#428bca}.right h1,.right h2,.right h3,.right h4,.right h5,.right p,.right div{color:white}.right pre{background-color:#1d1f21;border:1px solid #1d1f21}.right pre code{color:#c5c8c6}.right .description{margin-top:12px}.triple .resource-heading{font-size:125%}.definition{margin-top:12px;margin-bottom:12px}.definition .method{font-weight:bold}.definition .method.get{color:#2e8ab8}.definition .method.head{color:#2e8ab8}.definition .method.options{color:#2e8ab8}.definition .method.post{color:#56b82e}.definition .method.put{color:#b8a22e}.definition .method.patch{color:#b8a22e}.definition .method.delete{color:#b82e2e}.definition .uri{word-break:break-all;word-wrap:break-word}.definition .hostname{opacity:.5}.example-names{background-color:#eee;padding:12px;border-radius:6px}.example-names .tab-button{cursor:pointer;color:black;border:1px solid #ddd;padding:6px;margin-left:12px}.example-names .tab-button.active{background-color:#d5d5d5}.right .example-names{background-color:#444}.right .example-names .tab-button{color:white;border:1px solid #666;border-radius:6px}.right .example-names .tab-button.active{background-color:#5e5e5e}#nav-background{position:fixed;left:0;top:0;bottom:0;width:16.5%;padding-right:14.4px;background-color:#fbfbfb;border-right:1px solid #f0f0f0;z-index:-1}#right-panel-background{position:absolute;right:-12px;top:-12px;bottom:-12px;width:48.6%;background-color:#333;z-index:-1}@media (max-width:1200px){nav{width:198px}.container{max-width:840px}.container .row .content{margin-left:224px;width:606px}}@media (max-width:992px){nav{width:169.4px}.container{max-width:720px}.container .row .content{margin-left:194px;width:526px}}@media (max-width:768px){nav{display:none}.container{width:95%;max-width:none}.container .row .content,.container-fluid .row .content,.container-fluid.triple .row .content{margin-left:auto;margin-right:auto;width:95%}#nav-background{display:none}#right-panel-background{width:48.6%}}.back-to-top{position:fixed;z-index:1;bottom:0;right:24px;padding:4px 8px;color:rgba(0,0,0,0.5);background-color:#f2f2f2;text-decoration:none !important;border-top:1px solid #d9d9d9;border-left:1px solid #d9d9d9;border-right:1px solid #d9d9d9;border-top-left-radius:3px;border-top-right-radius:3px}.resource-group{padding:12px;margin-bottom:12px;background-color:white;border:1px solid #d9d9d9;border-radius:6px}.resource-group h2.group-heading,.resource-group .heading a{padding:12px;margin:-12px -12px 12px -12px;background-color:#f2f2f2;border-bottom:1px solid #d9d9d9;border-top-left-radius:6px;border-top-right-radius:6px;white-space:nowrap;text-overflow:ellipsis;overflow:hidden}.triple .content .resource-group{padding:0;border:none}.triple .content .resource-group h2.group-heading,.triple .content .resource-group .heading a{margin:0 0 12px 0;border:1px solid #d9d9d9}nav .resource-group .heading a{padding:12px;margin-bottom:0}nav .resource-group .collapse-content{padding:0}.action{margin-bottom:12px;padding:12px 12px 0 12px;overflow:hidden;border:1px solid transparent;border-radius:6px}.action h4.action-heading{padding:6px 12px;margin:-12px -12px 12px -12px;border-bottom:1px solid transparent;border-top-left-radius:6px;border-top-right-radius:6px;overflow:hidden}.action h4.action-heading .name{float:right;font-weight:normal;padding:6px 0}.action h4.action-heading .method{padding:6px 12px;margin-right:12px;border-radius:3px;display:inline-block}.action h4.action-heading .method.get{color:#fff;background-color:#337ab7}.action h4.action-heading .method.head{color:#fff;background-color:#337ab7}.action h4.action-heading .method.options{color:#fff;background-color:#337ab7}.action h4.action-heading .method.put{color:#fff;background-color:#ed9c28}.action h4.action-heading .method.patch{color:#fff;background-color:#ed9c28}.action h4.action-heading .method.post{color:#fff;background-color:#5cb85c}.action h4.action-heading .method.delete{color:#fff;background-color:#d9534f}.action h4.action-heading code{color:#444;background-color:#f5f5f5;border-color:#cfcfcf;font-weight:normal;word-break:break-all;display:inline-block;margin-top:2px}.action dl.inner{padding-bottom:2px}.action .title{border-bottom:1px solid white;margin:0 -12px -1px -12px;padding:12px}.action.get{border-color:#bce8f1}.action.get h4.action-heading{color:#337ab7;background:#d9edf7;border-bottom-color:#bce8f1}.action.head{border-color:#bce8f1}.action.head h4.action-heading{color:#337ab7;background:#d9edf7;border-bottom-color:#bce8f1}.action.options{border-color:#bce8f1}.action.options h4.action-heading{color:#337ab7;background:#d9edf7;border-bottom-color:#bce8f1}.action.post{border-color:#d6e9c6}.action.post h4.action-heading{color:#5cb85c;background:#dff0d8;border-bottom-color:#d6e9c6}.action.put{border-color:#faebcc}.action.put h4.action-heading{color:#ed9c28;background:#fcf8e3;border-bottom-color:#faebcc}.action.patch{border-color:#faebcc}.action.patch h4.action-heading{color:#ed9c28;background:#fcf8e3;border-bottom-color:#faebcc}.action.delete{border-color:#ebccd1}.action.delete h4.action-heading{color:#d9534f;background:#f2dede;border-bottom-color:#ebccd1}</style></head><body class=""><a href="https://dev-pf.onlineformapro.com/wcopy/os/api/documentation/index.php#top" class="text-muted back-to-top"><i class="fa fa-toggle-up"></i>&nbsp;Back to top</a><div class="container"><div class="row"><nav><div class="resource-group"><div class="heading"><div class="chevron"><i class="open fa fa-angle-down"></i></div><a href="https://dev-pf.onlineformapro.com/wcopy/os/api/documentation/index.php#utilisateur">Utilisateur</a></div><div class="collapse-content" style="max-height: 119px;"><ul><li><a href="https://dev-pf.onlineformapro.com/wcopy/os/api/documentation/index.php#utilisateur-inscription-post"><span class="badge post"><i class="fa fa-plus"></i></span>Inscription utilisateur</a></li><li><a href="https://dev-pf.onlineformapro.com/wcopy/os/api/documentation/index.php#utilisateur-liste-get"><span class="badge get"><i class="fa fa-arrow-down"></i></span>Liste utilisateurs</a></li><li><a href="https://dev-pf.onlineformapro.com/wcopy/os/api/documentation/index.php#utilisateur-connexions-post"><span class="badge post"><i class="fa fa-plus"></i></span>infos de connexions</a></li></ul></div></div><div class="resource-group"><div class="heading"><div class="chevron"><i class="open fa fa-angle-down"></i></div><a href="https://dev-pf.onlineformapro.com/wcopy/os/api/documentation/index.php#catalogue">Catalogue</a></div><div class="collapse-content" style="max-height: 227px;"><ul><li><a href="https://dev-pf.onlineformapro.com/wcopy/os/api/documentation/index.php#catalogue-catalogue-formations-get"><span class="badge get"><i class="fa fa-arrow-down"></i></span>Catalogue de formations</a></li><li><a href="https://dev-pf.onlineformapro.com/wcopy/os/api/documentation/index.php#catalogue-affect-formations-post"><span class="badge post"><i class="fa fa-plus"></i></span>Affecter des formations</a></li><li><a href="https://dev-pf.onlineformapro.com/wcopy/os/api/documentation/index.php#catalogue-catalogue-evaluations-get"><span class="badge get"><i class="fa fa-arrow-down"></i></span>Catalogue d'évaluations</a></li><li><a href="https://dev-pf.onlineformapro.com/wcopy/os/api/documentation/index.php#catalogue-affect-evaluations-post"><span class="badge post"><i class="fa fa-plus"></i></span>Affecter des évaluations</a></li><li><a href="https://dev-pf.onlineformapro.com/wcopy/os/api/documentation/index.php#catalogue-catalogue-parcours-get"><span class="badge get"><i class="fa fa-arrow-down"></i></span>Catalogue de parcours</a></li><li><a href="https://dev-pf.onlineformapro.com/wcopy/os/api/documentation/index.php#catalogue-affect-parcours-post"><span class="badge post"><i class="fa fa-plus"></i></span>Affecter des parcours</a></li></ul></div></div><div class="resource-group"><div class="heading"><div class="chevron"><i class="open fa fa-angle-down"></i></div><a href="https://dev-pf.onlineformapro.com/wcopy/os/api/documentation/index.php#reporting">Reporting</a></div><div class="collapse-content" style="max-height: 227px;"><ul><li><a href="https://dev-pf.onlineformapro.com/wcopy/os/api/documentation/index.php#reporting-get-suivi">Get suivi</a><ul><li><a href="https://dev-pf.onlineformapro.com/wcopy/os/api/documentation/index.php#reporting-get-suivi-post"><span class="badge post"><i class="fa fa-plus"></i></span>Récuperer le suivi par theme / soustheme / module d'un utilisateur</a></li><li><a href="https://dev-pf.onlineformapro.com/wcopy/os/api/documentation/index.php#reporting-get-suivi-post-1"><span class="badge post"><i class="fa fa-plus"></i></span>Récuperer le suivi par theme / soustheme / module de plusieurs utilisateurs</a></li><li><a href="https://dev-pf.onlineformapro.com/wcopy/os/api/documentation/index.php#reporting-get-suivi-post-2"><span class="badge post"><i class="fa fa-plus"></i></span>Récuperer le suivi d'une formation ou d'un parcours spécifique</a></li></ul></li><li><a href="https://dev-pf.onlineformapro.com/wcopy/os/api/documentation/index.php#reporting-get-suivi-%C3%A9valuations-post"><span class="badge post"><i class="fa fa-plus"></i></span>Récuperer le suivi des évaluation</a></li><li><a href="https://dev-pf.onlineformapro.com/wcopy/os/api/documentation/index.php#reporting-get-suivi-recap-post"><span class="badge post"><i class="fa fa-plus"></i></span>Récuperer le recapitulatif du suivi</a></li></ul></div></div><p style="text-align: center; word-wrap: break-word;"><a href="https://dev-pf.onlineformapro.com/wcopy/os/api/documentation/dev-pf.onlineformapro.com">dev-pf.onlineformapro.com</a></p></nav><div class="content"><header><h1 id="top">Onlineformapro LMS REST API</h1></header><p>Documentation de l’API REST de la plateforme LMS Onlineformapro.</p>
+            <section id="utilisateur" class="resource-group"><h2 class="group-heading">Utilisateur <a href="https://dev-pf.onlineformapro.com/wcopy/os/api/documentation/index.php#utilisateur" class="permalink">¶</a></h2><div id="utilisateur-inscription" class="resource"><h3 class="resource-heading">Inscription <a href="https://dev-pf.onlineformapro.com/wcopy/os/api/documentation/index.php#utilisateur-inscription" class="permalink">&nbsp;¶</a></h3><p>Cette action permet d’inscrire un utilisateur. Alias de <code>/php5/restapi/utilisateur/register</code></p>
+                    <div id="utilisateur-inscription-post" class="action post"><h4 class="action-heading"><div class="name">Inscription utilisateur</div><a href="https://dev-pf.onlineformapro.com/wcopy/os/api/documentation/index.php#utilisateur-inscription-post" class="method post">POST</a><code class="uri">/php5/restapi/utilisateur/inscription</code></h4><h4>Example URI</h4><div class="definition"><span class="method post">POST</span>&nbsp;<span class="uri"><span class="hostname">dev-pf.onlineformapro.com</span>/php5/restapi/utilisateur/inscription</span></div><div class="title"><strong>URI Parameters</strong><div class="collapse-button"><span class="close">Hide</span><span class="open">Show</span></div></div><div class="collapse-content" style="max-height: 0px;"><dl class="inner"><dt>nom</dt><dd><code>string</code>&nbsp;<span class="required">(required)</span>&nbsp;<span class="text-muted example"><strong>Example:&nbsp;</strong><span>DUPONT</span></span><p>Le nom du nouvel utilisateur</p>
+                                </dd><dt>prenom</dt><dd><code>string</code>&nbsp;<span class="required">(required)</span>&nbsp;<span class="text-muted example"><strong>Example:&nbsp;</strong><span>Jean</span></span><p>Le prénom du nouvel utilisateur</p>
+                                </dd><dt>login</dt><dd><code>string</code>&nbsp;<span>(optional)</span>&nbsp;<span class="text-muted example"><strong>Example:&nbsp;</strong><span>j.dupont</span></span><p>Le login de l’utilisateur.</p>
+                                </dd><dt>pwd</dt><dd><code>string</code>&nbsp;<span>(optional)</span>&nbsp;<span class="text-muted example"><strong>Example:&nbsp;</strong><span>gtxdsG45!df$aez</span></span><p>Le mot de passe de l’utilisateur. Si non spécifié, le mot de passe est généré aléatoirement</p>
+                                </dd><dt>email</dt><dd><code>string</code>&nbsp;<span>(optional)</span>&nbsp;<span class="text-muted example"><strong>Example:&nbsp;</strong><span>j.dupont@mail.com</span></span><p>L’email du nouvel utilisateur. Il n’est pas possible de créer plusieurs comptes avec le même email.</p>
+                                </dd><dt>civilite</dt><dd><code>number</code>&nbsp;<span>(optional)</span>&nbsp;<span class="text-muted example"><strong>Example:&nbsp;</strong><span>2</span></span><p>La civilité du nouvel utilisateur <code>1</code> pour Monsieur, <code>2</code> pour Madame. La valeur par défaut est <code>1</code></p>
+                                </dd><dt>date_debut</dt><dd><code>string</code>&nbsp;<span>(optional)</span>&nbsp;<span class="text-muted example"><strong>Example:&nbsp;</strong><span>2021-04-01</span></span><p>La date de début de validité du compte utilisateur au format <code>YYYY-mm-dd</code></p>
+                                </dd><dt>date_fin</dt><dd><code>string</code>&nbsp;<span>(optional)</span>&nbsp;<span class="text-muted example"><strong>Example:&nbsp;</strong><span>2021-10-31</span></span><p>La date de fin de validité du compte utilisateur au format <code>YYYY-mm-dd</code></p>
+                                </dd><dt>valide</dt><dd><code>string</code>&nbsp;<span>(optional)</span>&nbsp;<p><code>1</code> pour rendre l’utilisateur valide, <code>0</code> pour le rendre invalide. Un utilisateur invalide ne peut plus se connecter</p>
+                                </dd><dt>groupes</dt><dd><code>string</code>&nbsp;<span>(optional)</span>&nbsp;<p>La liste des libellés des groupes dans lesquels sera l’utilisateur.</p>
+                                </dd><dt>profil_formation</dt><dd><code>string</code>&nbsp;<span>(optional)</span>&nbsp;<p>Le libellé du profil de formation dans lequel sera l’utilisateur.</p>
+                                </dd><dt>profils_formation</dt><dd><code>string</code>&nbsp;<span>(optional)</span>&nbsp;<p>La liste des libellés des profils de formation dans lesquels sera l’utilisateur.</p>
+                                </dd><dt>profil_evaluation</dt><dd><code>string</code>&nbsp;<span>(optional)</span>&nbsp;<p>Le libellé du profil d’évaluation dans lequel sera l’utilisateur.</p>
+                                </dd><dt>profils_evaluation</dt><dd><code>string</code>&nbsp;<span>(optional)</span>&nbsp;<p>La liste des libellés des profils d’évaluation dans lesquels sera l’utilisateur.</p>
+                                </dd><dt>profil_parcours</dt><dd><code>string</code>&nbsp;<span>(optional)</span>&nbsp;<p>Le libellé du profil de parcours dans lequel sera l’utilisateur.</p>
+                                </dd><dt>profils_parcours</dt><dd><code>string</code>&nbsp;<span>(optional)</span>&nbsp;<p>La liste des libellés des profils de parcours dans lesquels sera l’utilisateur.</p>
+                                </dd><dt>envoi_notification</dt><dd><code>string</code>&nbsp;<span>(optional)</span>&nbsp;<p><code>1</code> pour qu’une notification par email soit envoyé au nouvel utilisateur. <code>0</code> sinon.</p>
+                                </dd></dl></div><div class="title"><strong>Request</strong><div class="collapse-button"><span class="close">Hide</span><span class="open">Show</span></div></div><div class="collapse-content"><div class="inner"><h5>Headers</h5><pre><code><span class="hljs-attribute">Content-Type</span>: <span class="hljs-string">multipart/form-data</span><br><span class="hljs-attribute">Access-Token</span>: <span class="hljs-string">6GDLA5g17FJUmw4DO5cfFV7QMPLAbfRo</span></code></pre><div style="height: 1px;"></div><h5>Body</h5><pre><code>nom=DUPONT&amp;prenom=Jean&amp;login=j.dupont&amp;email=j.dupont@mail.com</code></pre><div style="height: 1px;"></div></div></div><div class="title"><strong>Response&nbsp;&nbsp;<code>200</code></strong><div class="collapse-button"><span class="close">Hide</span><span class="open">Show</span></div></div><div class="collapse-content"><div class="inner"><h5>Headers</h5><pre><code><span class="hljs-attribute">Content-Type</span>: <span class="hljs-string">application/json</span></code></pre><div style="height: 1px;"></div><h5>Body</h5><pre><code>{
+  "<span class="hljs-attribute">success</span>": <span class="hljs-value"><span class="hljs-string">"true"</span>
+</span>}</code></pre><div style="height: 1px;"></div><h5>Schema</h5><pre><code>{
+  "<span class="hljs-attribute">$schema</span>": <span class="hljs-value"><span class="hljs-string">"http://json-schema.org/draft-04/schema#"</span></span>,
+  "<span class="hljs-attribute">type</span>": <span class="hljs-value"><span class="hljs-string">"object"</span></span>,
+  "<span class="hljs-attribute">properties</span>": <span class="hljs-value">{
+    "<span class="hljs-attribute">success</span>": <span class="hljs-value">{
+      "<span class="hljs-attribute">type</span>": <span class="hljs-value"><span class="hljs-string">"string"</span></span>,
+      "<span class="hljs-attribute">description</span>": <span class="hljs-value"><span class="hljs-string">"`true` si tout s'est bien passé"</span>
+    </span>}
+  </span>}
+</span>}</code></pre><div style="height: 1px;"></div></div></div></div></div><div id="utilisateur-liste" class="resource"><h3 class="resource-heading">Liste <a href="https://dev-pf.onlineformapro.com/wcopy/os/api/documentation/index.php#utilisateur-liste" class="permalink">&nbsp;¶</a></h3><p>Cette action permet de lister les utilisateurs.</p>
+                    <div id="utilisateur-liste-get" class="action get"><h4 class="action-heading"><div class="name">Liste utilisateurs</div><a href="https://dev-pf.onlineformapro.com/wcopy/os/api/documentation/index.php#utilisateur-liste-get" class="method get">GET</a><code class="uri">/php5/restapi/utilisateur/liste</code></h4><h4>Example URI</h4><div class="definition"><span class="method get">GET</span>&nbsp;<span class="uri"><span class="hostname">dev-pf.onlineformapro.com</span>/php5/restapi/utilisateur/liste</span></div><div class="title"><strong>Request</strong><div class="collapse-button"><span class="close">Hide</span><span class="open">Show</span></div></div><div class="collapse-content"><div class="inner"><h5>Headers</h5><pre><code><span class="hljs-attribute">Access-Token</span>: <span class="hljs-string">6GDLA5g17FJUmw4DO5cfFV7QMPLAbfRo</span></code></pre><div style="height: 1px;"></div></div></div><div class="title"><strong>Response&nbsp;&nbsp;<code>200</code></strong><div class="collapse-button"><span class="close">Hide</span><span class="open">Show</span></div></div><div class="collapse-content"><div class="inner"><h5>Headers</h5><pre><code><span class="hljs-attribute">Content-Type</span>: <span class="hljs-string">application/json</span></code></pre><div style="height: 1px;"></div><h5>Body</h5><pre><code>{
+  "<span class="hljs-attribute">success</span>": <span class="hljs-value"><span class="hljs-string">"true"</span></span>,
+  "<span class="hljs-attribute">utilisateurs</span>": <span class="hljs-value">[
+    {
+      "<span class="hljs-attribute">guid</span>": <span class="hljs-value"><span class="hljs-string">"PMQWH484ECF2D13SQP330715DNQ6774B71Z4"</span></span>,
+      "<span class="hljs-attribute">login</span>": <span class="hljs-value"><span class="hljs-string">"j.doe"</span></span>,
+      "<span class="hljs-attribute">no_unique</span>": <span class="hljs-value"><span class="hljs-string">"NO12458"</span></span>,
+      "<span class="hljs-attribute">nom</span>": <span class="hljs-value"><span class="hljs-string">"DOE"</span></span>,
+      "<span class="hljs-attribute">prenom</span>": <span class="hljs-value"><span class="hljs-string">"John"</span></span>,
+      "<span class="hljs-attribute">email</span>": <span class="hljs-value"><span class="hljs-string">"j.doe@mail.com"</span></span>,
+      "<span class="hljs-attribute">date_debut</span>": <span class="hljs-value"><span class="hljs-number">1523829600</span></span>,
+      "<span class="hljs-attribute">date_fin</span>": <span class="hljs-value"><span class="hljs-number">1618475504</span>
+    </span>}
+  ]
+</span>}</code></pre><div style="height: 1px;"></div><h5>Schema</h5><pre><code>{
+  "<span class="hljs-attribute">$schema</span>": <span class="hljs-value"><span class="hljs-string">"http://json-schema.org/draft-04/schema#"</span></span>,
+  "<span class="hljs-attribute">type</span>": <span class="hljs-value"><span class="hljs-string">"object"</span></span>,
+  "<span class="hljs-attribute">properties</span>": <span class="hljs-value">{
+    "<span class="hljs-attribute">success</span>": <span class="hljs-value">{
+      "<span class="hljs-attribute">type</span>": <span class="hljs-value"><span class="hljs-string">"string"</span></span>,
+      "<span class="hljs-attribute">description</span>": <span class="hljs-value"><span class="hljs-string">"`true` si tout s'est bien passé"</span>
+    </span>}</span>,
+    "<span class="hljs-attribute">utilisateurs</span>": <span class="hljs-value">{
+      "<span class="hljs-attribute">type</span>": <span class="hljs-value"><span class="hljs-string">"array"</span></span>,
+      "<span class="hljs-attribute">items</span>": <span class="hljs-value">{
+        "<span class="hljs-attribute">type</span>": <span class="hljs-value"><span class="hljs-string">"object"</span></span>,
+        "<span class="hljs-attribute">properties</span>": <span class="hljs-value">{
+          "<span class="hljs-attribute">guid</span>": <span class="hljs-value">{
+            "<span class="hljs-attribute">type</span>": <span class="hljs-value"><span class="hljs-string">"string"</span></span>,
+            "<span class="hljs-attribute">description</span>": <span class="hljs-value"><span class="hljs-string">"l'identifiant unique (GUID) de l'utilisateur"</span>
+          </span>}</span>,
+          "<span class="hljs-attribute">login</span>": <span class="hljs-value">{
+            "<span class="hljs-attribute">type</span>": <span class="hljs-value"><span class="hljs-string">"string"</span></span>,
+            "<span class="hljs-attribute">description</span>": <span class="hljs-value"><span class="hljs-string">"L'identifiant unique (login) de l'utilisateur"</span>
+          </span>}</span>,
+          "<span class="hljs-attribute">no_unique</span>": <span class="hljs-value">{
+            "<span class="hljs-attribute">type</span>": <span class="hljs-value"><span class="hljs-string">"string"</span></span>,
+            "<span class="hljs-attribute">description</span>": <span class="hljs-value"><span class="hljs-string">"Numero unique de l'utilisateur ou chaîne de caractère vide"</span>
+          </span>}</span>,
+          "<span class="hljs-attribute">nom</span>": <span class="hljs-value">{
+            "<span class="hljs-attribute">type</span>": <span class="hljs-value"><span class="hljs-string">"string"</span></span>,
+            "<span class="hljs-attribute">description</span>": <span class="hljs-value"><span class="hljs-string">"Le nom de l'utilisateur"</span>
+          </span>}</span>,
+          "<span class="hljs-attribute">prenom</span>": <span class="hljs-value">{
+            "<span class="hljs-attribute">type</span>": <span class="hljs-value"><span class="hljs-string">"string"</span></span>,
+            "<span class="hljs-attribute">description</span>": <span class="hljs-value"><span class="hljs-string">"Le prenom de l'utilisateur"</span>
+          </span>}</span>,
+          "<span class="hljs-attribute">email</span>": <span class="hljs-value">{
+            "<span class="hljs-attribute">type</span>": <span class="hljs-value"><span class="hljs-string">"string"</span></span>,
+            "<span class="hljs-attribute">description</span>": <span class="hljs-value"><span class="hljs-string">"L'email de l'utilisateur"</span>
+          </span>}</span>,
+          "<span class="hljs-attribute">date_debut</span>": <span class="hljs-value">{
+            "<span class="hljs-attribute">type</span>": <span class="hljs-value"><span class="hljs-string">"number"</span></span>,
+            "<span class="hljs-attribute">description</span>": <span class="hljs-value"><span class="hljs-string">"La date de début de validité du compte utilisateur au format timestamp"</span>
+          </span>}</span>,
+          "<span class="hljs-attribute">date_fin</span>": <span class="hljs-value">{
+            "<span class="hljs-attribute">type</span>": <span class="hljs-value">[
+              <span class="hljs-string">"number"</span>,
+              <span class="hljs-string">"null"</span>
+            ]</span>,
+            "<span class="hljs-attribute">description</span>": <span class="hljs-value"><span class="hljs-string">"La date de fin de validité du compte utilisateur au format timestamp ou `null` si la validité est permanente"</span>
+          </span>}
+        </span>}
+      </span>}
+    </span>}
+  </span>}
+</span>}</code></pre><div style="height: 1px;"></div></div></div></div></div><div id="utilisateur-connexions" class="resource"><h3 class="resource-heading">Connexions <a href="https://dev-pf.onlineformapro.com/wcopy/os/api/documentation/index.php#utilisateur-connexions" class="permalink">&nbsp;¶</a></h3><p>Cette action permet de récuperer les informations de connections des utilisateurs.</p>
+                    <div id="utilisateur-connexions-post" class="action post"><h4 class="action-heading"><div class="name">infos de connexions</div><a href="https://dev-pf.onlineformapro.com/wcopy/os/api/documentation/index.php#utilisateur-connexions-post" class="method post">POST</a><code class="uri">/php5/restapi/utilisateur/connexions</code></h4><h4>Example URI</h4><div class="definition"><span class="method post">POST</span>&nbsp;<span class="uri"><span class="hostname">dev-pf.onlineformapro.com</span>/php5/restapi/utilisateur/connexions</span></div><div class="title"><strong>URI Parameters</strong><div class="collapse-button show"><span class="close">Hide</span><span class="open">Show</span></div></div><div class="collapse-content" style="max-height: 84px;"><dl class="inner"><dt>utilisateur</dt><dd><code>string</code>&nbsp;<span>(optional)</span>&nbsp;<span class="text-muted example"><strong>Example:&nbsp;</strong><span>PMQWH484ECF2D13SQP330715DNQ6774B71Z4</span></span><p>L’identifiant unique (GUID) de l’utilisateur souhaité. Si non spécifié, Les informations de tout les utilisateurs sont retournés</p>
+                                </dd></dl></div><div class="title"><strong>Request</strong><div class="collapse-button"><span class="close">Hide</span><span class="open">Show</span></div></div><div class="collapse-content"><div class="inner"><h5>Headers</h5><pre><code><span class="hljs-attribute">Content-Type</span>: <span class="hljs-string">multipart/form-data</span><br><span class="hljs-attribute">Access-Token</span>: <span class="hljs-string">6GDLA5g17FJUmw4DO5cfFV7QMPLAbfRo</span></code></pre><div style="height: 1px;"></div><h5>Body</h5><pre><code>utilisateur=PMQWH484ECF2D13SQP330715DNQ6774B71Z4</code></pre><div style="height: 1px;"></div></div></div><div class="title"><strong>Response&nbsp;&nbsp;<code>200</code></strong><div class="collapse-button"><span class="close">Hide</span><span class="open">Show</span></div></div><div class="collapse-content"><div class="inner"><h5>Headers</h5><pre><code><span class="hljs-attribute">Content-Type</span>: <span class="hljs-string">application/json</span></code></pre><div style="height: 1px;"></div><h5>Body</h5><pre><code>{
+  "<span class="hljs-attribute">success</span>": <span class="hljs-value"><span class="hljs-string">"true"</span></span>,
+  "<span class="hljs-attribute">connexions</span>": <span class="hljs-value">{
+    "<span class="hljs-attribute">PMQWH484ECF2D13SQP330715DNQ6774B71Z4</span>": <span class="hljs-value">[
+      {
+        "<span class="hljs-attribute">date_debut</span>": <span class="hljs-value"><span class="hljs-string">"2020-04-25 11:26:39"</span></span>,
+        "<span class="hljs-attribute">date_fin</span>": <span class="hljs-value"><span class="hljs-string">"2020-06-25 11:26:39"</span>
+      </span>}
+    ]
+  </span>}
+</span>}</code></pre><div style="height: 1px;"></div><h5>Schema</h5><pre><code>{
+  "<span class="hljs-attribute">$schema</span>": <span class="hljs-value"><span class="hljs-string">"http://json-schema.org/draft-04/schema#"</span></span>,
+  "<span class="hljs-attribute">type</span>": <span class="hljs-value"><span class="hljs-string">"object"</span></span>,
+  "<span class="hljs-attribute">properties</span>": <span class="hljs-value">{
+    "<span class="hljs-attribute">success</span>": <span class="hljs-value">{
+      "<span class="hljs-attribute">type</span>": <span class="hljs-value"><span class="hljs-string">"string"</span></span>,
+      "<span class="hljs-attribute">description</span>": <span class="hljs-value"><span class="hljs-string">"`true` si tout s'est bien passé"</span>
+    </span>}</span>,
+    "<span class="hljs-attribute">connexions</span>": <span class="hljs-value">{
+      "<span class="hljs-attribute">type</span>": <span class="hljs-value"><span class="hljs-string">"object"</span></span>,
+      "<span class="hljs-attribute">properties</span>": <span class="hljs-value">{
+        "<span class="hljs-attribute">PMQWH484ECF2D13SQP330715DNQ6774B71Z4</span>": <span class="hljs-value">{
+          "<span class="hljs-attribute">type</span>": <span class="hljs-value"><span class="hljs-string">"array"</span></span>,
+          "<span class="hljs-attribute">items</span>": <span class="hljs-value">{
+            "<span class="hljs-attribute">type</span>": <span class="hljs-value"><span class="hljs-string">"object"</span></span>,
+            "<span class="hljs-attribute">properties</span>": <span class="hljs-value">{
+              "<span class="hljs-attribute">date_debut</span>": <span class="hljs-value">{
+                "<span class="hljs-attribute">type</span>": <span class="hljs-value"><span class="hljs-string">"string"</span></span>,
+                "<span class="hljs-attribute">description</span>": <span class="hljs-value"><span class="hljs-string">"La date à laquelle l'utilisateur s'est connecté"</span>
+              </span>}</span>,
+              "<span class="hljs-attribute">date_fin</span>": <span class="hljs-value">{
+                "<span class="hljs-attribute">type</span>": <span class="hljs-value"><span class="hljs-string">"string"</span></span>,
+                "<span class="hljs-attribute">description</span>": <span class="hljs-value"><span class="hljs-string">"La date à laquelle l'utilisateur a quité la plateforme"</span>
+              </span>}
+            </span>}
+          </span>}
+        </span>}
+      </span>}</span>,
+      "<span class="hljs-attribute">description</span>": <span class="hljs-value"><span class="hljs-string">"Les informations de connections par GUID utilisateur"</span>
+    </span>}
+  </span>}
+</span>}</code></pre><div style="height: 1px;"></div></div></div></div></div></section><section id="catalogue" class="resource-group"><h2 class="group-heading">Catalogue <a href="https://dev-pf.onlineformapro.com/wcopy/os/api/documentation/index.php#catalogue" class="permalink">¶</a></h2><div id="catalogue-catalogue-formations" class="resource"><h3 class="resource-heading">Catalogue formations <a href="https://dev-pf.onlineformapro.com/wcopy/os/api/documentation/index.php#catalogue-catalogue-formations" class="permalink">&nbsp;¶</a></h3><p>Cette action permet de récuperer le catalogue de formations</p>
+                    <div id="catalogue-catalogue-formations-get" class="action get"><h4 class="action-heading"><div class="name">Catalogue de formations</div><a href="https://dev-pf.onlineformapro.com/wcopy/os/api/documentation/index.php#catalogue-catalogue-formations-get" class="method get">GET</a><code class="uri">/php5/restapi/catalogue/formations</code></h4><h4>Example URI</h4><div class="definition"><span class="method get">GET</span>&nbsp;<span class="uri"><span class="hostname">dev-pf.onlineformapro.com</span>/php5/restapi/catalogue/formations</span></div><div class="title"><strong>Request</strong><div class="collapse-button"><span class="close">Hide</span><span class="open">Show</span></div></div><div class="collapse-content"><div class="inner"><h5>Headers</h5><pre><code><span class="hljs-attribute">Access-Token</span>: <span class="hljs-string">6GDLA5g17FJUmw4DO5cfFV7QMPLAbfRo</span></code></pre><div style="height: 1px;"></div></div></div><div class="title"><strong>Response&nbsp;&nbsp;<code>200</code></strong><div class="collapse-button"><span class="close">Hide</span><span class="open">Show</span></div></div><div class="collapse-content"><div class="inner"><h5>Headers</h5><pre><code><span class="hljs-attribute">Content-Type</span>: <span class="hljs-string">application/json</span></code></pre><div style="height: 1px;"></div><h5>Body</h5><pre><code>{
+  "<span class="hljs-attribute">themes</span>": <span class="hljs-value">[
+    {
+      "<span class="hljs-attribute">id</span>": <span class="hljs-value"><span class="hljs-string">"11254"</span></span>,
+      "<span class="hljs-attribute">libelle</span>": <span class="hljs-value"><span class="hljs-string">"Nom du thème"</span></span>,
+      "<span class="hljs-attribute">sous-themes</span>": <span class="hljs-value">[
+        {
+          "<span class="hljs-attribute">id</span>": <span class="hljs-value"><span class="hljs-string">"10395"</span></span>,
+          "<span class="hljs-attribute">libelle</span>": <span class="hljs-value"><span class="hljs-string">"Nom du sousthème"</span></span>,
+          "<span class="hljs-attribute">objectifs</span>": <span class="hljs-value"><span class="hljs-string">"Description du sousthème"</span></span>,
+          "<span class="hljs-attribute">modules</span>": <span class="hljs-value">[
+            {
+              "<span class="hljs-attribute">id</span>": <span class="hljs-value"><span class="hljs-string">"23478"</span></span>,
+              "<span class="hljs-attribute">libelle</span>": <span class="hljs-value"><span class="hljs-string">"Nom ressource"</span>
+            </span>}
+          ]
+        </span>}
+      ]
+    </span>}
+  ]
+</span>}</code></pre><div style="height: 1px;"></div><h5>Schema</h5><pre><code>{
+  "<span class="hljs-attribute">$schema</span>": <span class="hljs-value"><span class="hljs-string">"http://json-schema.org/draft-04/schema#"</span></span>,
+  "<span class="hljs-attribute">type</span>": <span class="hljs-value"><span class="hljs-string">"object"</span></span>,
+  "<span class="hljs-attribute">properties</span>": <span class="hljs-value">{
+    "<span class="hljs-attribute">themes</span>": <span class="hljs-value">{
+      "<span class="hljs-attribute">type</span>": <span class="hljs-value"><span class="hljs-string">"array"</span></span>,
+      "<span class="hljs-attribute">items</span>": <span class="hljs-value">{
+        "<span class="hljs-attribute">type</span>": <span class="hljs-value"><span class="hljs-string">"object"</span></span>,
+        "<span class="hljs-attribute">properties</span>": <span class="hljs-value">{
+          "<span class="hljs-attribute">id</span>": <span class="hljs-value">{
+            "<span class="hljs-attribute">type</span>": <span class="hljs-value"><span class="hljs-string">"string"</span></span>,
+            "<span class="hljs-attribute">description</span>": <span class="hljs-value"><span class="hljs-string">"l'id du thème"</span>
+          </span>}</span>,
+          "<span class="hljs-attribute">libelle</span>": <span class="hljs-value">{
+            "<span class="hljs-attribute">type</span>": <span class="hljs-value"><span class="hljs-string">"string"</span></span>,
+            "<span class="hljs-attribute">description</span>": <span class="hljs-value"><span class="hljs-string">"Le libellé du thème"</span>
+          </span>}</span>,
+          "<span class="hljs-attribute">sous-themes</span>": <span class="hljs-value">{
+            "<span class="hljs-attribute">type</span>": <span class="hljs-value"><span class="hljs-string">"array"</span></span>,
+            "<span class="hljs-attribute">items</span>": <span class="hljs-value">{
+              "<span class="hljs-attribute">type</span>": <span class="hljs-value"><span class="hljs-string">"object"</span></span>,
+              "<span class="hljs-attribute">properties</span>": <span class="hljs-value">{
+                "<span class="hljs-attribute">id</span>": <span class="hljs-value">{
+                  "<span class="hljs-attribute">type</span>": <span class="hljs-value"><span class="hljs-string">"string"</span></span>,
+                  "<span class="hljs-attribute">description</span>": <span class="hljs-value"><span class="hljs-string">"l'id du sousthème"</span>
+                </span>}</span>,
+                "<span class="hljs-attribute">libelle</span>": <span class="hljs-value">{
+                  "<span class="hljs-attribute">type</span>": <span class="hljs-value"><span class="hljs-string">"string"</span></span>,
+                  "<span class="hljs-attribute">description</span>": <span class="hljs-value"><span class="hljs-string">"Le libellé du sousthème"</span>
+                </span>}</span>,
+                "<span class="hljs-attribute">objectifs</span>": <span class="hljs-value">{
+                  "<span class="hljs-attribute">type</span>": <span class="hljs-value"><span class="hljs-string">"string"</span></span>,
+                  "<span class="hljs-attribute">description</span>": <span class="hljs-value"><span class="hljs-string">"La description du sousthème"</span>
+                </span>}</span>,
+                "<span class="hljs-attribute">modules</span>": <span class="hljs-value">{
+                  "<span class="hljs-attribute">type</span>": <span class="hljs-value"><span class="hljs-string">"array"</span></span>,
+                  "<span class="hljs-attribute">items</span>": <span class="hljs-value">{
+                    "<span class="hljs-attribute">type</span>": <span class="hljs-value"><span class="hljs-string">"object"</span></span>,
+                    "<span class="hljs-attribute">properties</span>": <span class="hljs-value">{
+                      "<span class="hljs-attribute">id</span>": <span class="hljs-value">{
+                        "<span class="hljs-attribute">type</span>": <span class="hljs-value"><span class="hljs-string">"string"</span></span>,
+                        "<span class="hljs-attribute">description</span>": <span class="hljs-value"><span class="hljs-string">"L'id de la ressource"</span>
+                      </span>}</span>,
+                      "<span class="hljs-attribute">libelle</span>": <span class="hljs-value">{
+                        "<span class="hljs-attribute">type</span>": <span class="hljs-value"><span class="hljs-string">"string"</span></span>,
+                        "<span class="hljs-attribute">description</span>": <span class="hljs-value"><span class="hljs-string">"Le nom du module de formation ou de l'évaluation"</span>
+                      </span>}
+                    </span>}
+                  </span>}
+                </span>}
+              </span>}
+            </span>}
+          </span>}
+        </span>}
+      </span>}</span>,
+      "<span class="hljs-attribute">description</span>": <span class="hljs-value"><span class="hljs-string">"Le catalogue de formation organisé en thème / sous-thème"</span>
+    </span>}
+  </span>}
+</span>}</code></pre><div style="height: 1px;"></div></div></div></div></div><div id="catalogue-affect-formations" class="resource"><h3 class="resource-heading">Affect formations <a href="https://dev-pf.onlineformapro.com/wcopy/os/api/documentation/index.php#catalogue-affect-formations" class="permalink">&nbsp;¶</a></h3><p>Cette action permet d’affecter des formations à un utilisateur</p>
+                    <div id="catalogue-affect-formations-post" class="action post"><h4 class="action-heading"><div class="name">Affecter des formations</div><a href="https://dev-pf.onlineformapro.com/wcopy/os/api/documentation/index.php#catalogue-affect-formations-post" class="method post">POST</a><code class="uri">/php5/restapi/catalogue/affect-formations</code></h4><h4>Example URI</h4><div class="definition"><span class="method post">POST</span>&nbsp;<span class="uri"><span class="hostname">dev-pf.onlineformapro.com</span>/php5/restapi/catalogue/affect-formations</span></div><div class="title"><strong>URI Parameters</strong><div class="collapse-button show"><span class="close">Hide</span><span class="open">Show</span></div></div><div class="collapse-content" style="max-height: 800px;"><dl class="inner"><dt>utilisateur</dt><dd><code>string</code>&nbsp;<span class="required">(required)</span>&nbsp;<span class="text-muted example"><strong>Example:&nbsp;</strong><span>2F81B1853DD87BD88E7BC3E465B59271D149</span></span><p>Le GUID de l’utilisateur</p>
+                                </dd><dt>modules</dt><dd><code>string</code>&nbsp;<span>(optional)</span>&nbsp;<span class="text-muted example"><strong>Example:&nbsp;</strong><span>[14725, 13258]</span></span><p>La liste des ids des modules à affecter</p>
+                                </dd><dt>dates</dt><dd><code>string</code>&nbsp;<span>(optional)</span>&nbsp;<span class="text-muted example"><strong>Example:&nbsp;</strong><span>{"14725":{"date_debut":"2021-02-01", "date_fin":"2021-10-01"}}</span></span><p>Les limites par id modules des dates pendant laquelle l’utilisateur pourra utiliser le sous-thème dans lequel est le module</p>
+                                </dd><dt>durees</dt><dd><code>string</code>&nbsp;<span>(optional)</span>&nbsp;<span class="text-muted example"><strong>Example:&nbsp;</strong><span>{"14725":2, "13258":5}</span></span><p>La durée maximum par id module pendant laquelle l’utilisateur peut utiliser le sous-thème dans lequel est le module (en heures)</p>
+                                </dd><dt>sousthemes</dt><dd><code>string</code>&nbsp;<span>(optional)</span>&nbsp;<span class="text-muted example"><strong>Example:&nbsp;</strong><span>[24316, 34215]</span></span><p>La liste des ids des sous-thèmes à affecter</p>
+                                </dd><dt>dates_sousthemes</dt><dd><code>string</code>&nbsp;<span>(optional)</span>&nbsp;<p>Les limites par id sous-thème des dates pendant laquelle l’utilisateur pourra utiliser le sous-thème. Même syntaxe que <code>dates</code></p>
+                                </dd><dt>durees_sousthemes</dt><dd><code>string</code>&nbsp;<span>(optional)</span>&nbsp;<span class="text-muted example"><strong>Example:&nbsp;</strong><span>{"24316":10}</span></span><p>Les durées maximum par id sous-thème pendant laquelle l’utilisateur peut utiliser le sous-thème (en heures)</p>
+                                </dd><dt>themes</dt><dd><code>string</code>&nbsp;<span>(optional)</span>&nbsp;<span class="text-muted example"><strong>Example:&nbsp;</strong><span>[19458, 14753]</span></span><p>La liste des ids des thèmes à affecter</p>
+                                </dd><dt>dates_themes</dt><dd><code>string</code>&nbsp;<span>(optional)</span>&nbsp;<p>Les limites par id thème des dates pendant laquelle l’utilisateur pourra utiliser le thème. Même syntaxe que <code>dates</code>.</p>
+                                </dd><dt>durees_themes</dt><dd><code>string</code>&nbsp;<span>(optional)</span>&nbsp;<span class="text-muted example"><strong>Example:&nbsp;</strong><span>{"19458":20}</span></span><p>Les durées maximum par id thème pendant laquelle l’utilisateur peut utiliser le thème (en heures)</p>
+                                </dd><dt>tutorat</dt><dd><code>string</code>&nbsp;<span>(optional)</span>&nbsp;<span class="text-muted example"><strong>Example:&nbsp;</strong><span>1</span></span><p><code>1</code> pour activer le tutorat, <code>0</code> sinon</p>
+                                </dd><dt>affect_eval_pre</dt><dd><code>string</code>&nbsp;<span class="required">(required)</span>&nbsp;<span class="text-muted example"><strong>Example:&nbsp;</strong><span>1</span></span><p><code>1</code> pour affecter les évaluations pre.</p>
+                                </dd><dt>affect_eval_post</dt><dd><code>string</code>&nbsp;<span class="required">(required)</span>&nbsp;<span class="text-muted example"><strong>Example:&nbsp;</strong><span>1</span></span><p><code>1</code> pour affecter les évaluations post.</p>
+                                </dd></dl></div><div class="title"><strong>Request</strong><div class="collapse-button"><span class="close">Hide</span><span class="open">Show</span></div></div><div class="collapse-content"><div class="inner"><h5>Headers</h5><pre><code><span class="hljs-attribute">Content-Type</span>: <span class="hljs-string">multipart/form-data</span><br><span class="hljs-attribute">Access-Token</span>: <span class="hljs-string">6GDLA5g17FJUmw4DO5cfFV7QMPLAbfRo</span></code></pre><div style="height: 1px;"></div><h5>Body</h5><pre><code>utilisateur=2F81B1853DD87BD88E7BC3E465B59271D149</code></pre><div style="height: 1px;"></div></div></div><div class="title"><strong>Response&nbsp;&nbsp;<code>200</code></strong><div class="collapse-button"><span class="close">Hide</span><span class="open">Show</span></div></div><div class="collapse-content"><div class="inner"><h5>Headers</h5><pre><code><span class="hljs-attribute">Content-Type</span>: <span class="hljs-string">application/json</span></code></pre><div style="height: 1px;"></div><h5>Body</h5><pre><code>{
+  "<span class="hljs-attribute">success</span>": <span class="hljs-value"><span class="hljs-string">"true"</span>
+</span>}</code></pre><div style="height: 1px;"></div><h5>Schema</h5><pre><code>{
+  "<span class="hljs-attribute">$schema</span>": <span class="hljs-value"><span class="hljs-string">"http://json-schema.org/draft-04/schema#"</span></span>,
+  "<span class="hljs-attribute">type</span>": <span class="hljs-value"><span class="hljs-string">"object"</span></span>,
+  "<span class="hljs-attribute">properties</span>": <span class="hljs-value">{
+    "<span class="hljs-attribute">success</span>": <span class="hljs-value">{
+      "<span class="hljs-attribute">type</span>": <span class="hljs-value"><span class="hljs-string">"string"</span></span>,
+      "<span class="hljs-attribute">description</span>": <span class="hljs-value"><span class="hljs-string">"`true` si tout s'est bien passé"</span>
+    </span>}
+  </span>}
+</span>}</code></pre><div style="height: 1px;"></div></div></div></div></div><div id="catalogue-catalogue-evaluations" class="resource"><h3 class="resource-heading">Catalogue evaluations <a href="https://dev-pf.onlineformapro.com/wcopy/os/api/documentation/index.php#catalogue-catalogue-evaluations" class="permalink">&nbsp;¶</a></h3><p>Cette action permet de récuperer le catalogue d’évaluation</p>
+                    <div id="catalogue-catalogue-evaluations-get" class="action get"><h4 class="action-heading"><div class="name">Catalogue d'évaluations</div><a href="https://dev-pf.onlineformapro.com/wcopy/os/api/documentation/index.php#catalogue-catalogue-evaluations-get" class="method get">GET</a><code class="uri">/php5/restapi/catalogue/evaluations</code></h4><h4>Example URI</h4><div class="definition"><span class="method get">GET</span>&nbsp;<span class="uri"><span class="hostname">dev-pf.onlineformapro.com</span>/php5/restapi/catalogue/evaluations</span></div><div class="title"><strong>Request</strong><div class="collapse-button"><span class="close">Hide</span><span class="open">Show</span></div></div><div class="collapse-content"><div class="inner"><h5>Headers</h5><pre><code><span class="hljs-attribute">Access-Token</span>: <span class="hljs-string">6GDLA5g17FJUmw4DO5cfFV7QMPLAbfRo</span></code></pre><div style="height: 1px;"></div></div></div><div class="title"><strong>Response&nbsp;&nbsp;<code>200</code></strong><div class="collapse-button"><span class="close">Hide</span><span class="open">Show</span></div></div><div class="collapse-content"><div class="inner"><h5>Headers</h5><pre><code><span class="hljs-attribute">Content-Type</span>: <span class="hljs-string">application/json</span></code></pre><div style="height: 1px;"></div><h5>Body</h5><pre><code>{
+  "<span class="hljs-attribute">themes</span>": <span class="hljs-value">[
+    {
+      "<span class="hljs-attribute">id</span>": <span class="hljs-value"><span class="hljs-string">"11254"</span></span>,
+      "<span class="hljs-attribute">libelle</span>": <span class="hljs-value"><span class="hljs-string">"Nom du thème"</span></span>,
+      "<span class="hljs-attribute">sous-themes</span>": <span class="hljs-value">[
+        {
+          "<span class="hljs-attribute">id</span>": <span class="hljs-value"><span class="hljs-string">"10395"</span></span>,
+          "<span class="hljs-attribute">libelle</span>": <span class="hljs-value"><span class="hljs-string">"Nom du sousthème"</span></span>,
+          "<span class="hljs-attribute">modules</span>": <span class="hljs-value">[
+            {
+              "<span class="hljs-attribute">id</span>": <span class="hljs-value"><span class="hljs-string">"23478"</span></span>,
+              "<span class="hljs-attribute">libelle</span>": <span class="hljs-value"><span class="hljs-string">"Nom ressource"</span></span>,
+              "<span class="hljs-attribute">description</span>": <span class="hljs-value"><span class="hljs-string">"Description module"</span></span>,
+              "<span class="hljs-attribute">duree</span>": <span class="hljs-value"><span class="hljs-string">"30"</span>
+            </span>}
+          ]
+        </span>}
+      ]
+    </span>}
+  ]
+</span>}</code></pre><div style="height: 1px;"></div><h5>Schema</h5><pre><code>{
+  "<span class="hljs-attribute">$schema</span>": <span class="hljs-value"><span class="hljs-string">"http://json-schema.org/draft-04/schema#"</span></span>,
+  "<span class="hljs-attribute">type</span>": <span class="hljs-value"><span class="hljs-string">"object"</span></span>,
+  "<span class="hljs-attribute">properties</span>": <span class="hljs-value">{
+    "<span class="hljs-attribute">themes</span>": <span class="hljs-value">{
+      "<span class="hljs-attribute">type</span>": <span class="hljs-value"><span class="hljs-string">"array"</span></span>,
+      "<span class="hljs-attribute">items</span>": <span class="hljs-value">{
+        "<span class="hljs-attribute">type</span>": <span class="hljs-value"><span class="hljs-string">"object"</span></span>,
+        "<span class="hljs-attribute">properties</span>": <span class="hljs-value">{
+          "<span class="hljs-attribute">id</span>": <span class="hljs-value">{
+            "<span class="hljs-attribute">type</span>": <span class="hljs-value"><span class="hljs-string">"string"</span></span>,
+            "<span class="hljs-attribute">description</span>": <span class="hljs-value"><span class="hljs-string">"l'id du thème"</span>
+          </span>}</span>,
+          "<span class="hljs-attribute">libelle</span>": <span class="hljs-value">{
+            "<span class="hljs-attribute">type</span>": <span class="hljs-value"><span class="hljs-string">"string"</span></span>,
+            "<span class="hljs-attribute">description</span>": <span class="hljs-value"><span class="hljs-string">"Le libellé du thème"</span>
+          </span>}</span>,
+          "<span class="hljs-attribute">sous-themes</span>": <span class="hljs-value">{
+            "<span class="hljs-attribute">type</span>": <span class="hljs-value"><span class="hljs-string">"array"</span></span>,
+            "<span class="hljs-attribute">items</span>": <span class="hljs-value">{
+              "<span class="hljs-attribute">type</span>": <span class="hljs-value"><span class="hljs-string">"object"</span></span>,
+              "<span class="hljs-attribute">properties</span>": <span class="hljs-value">{
+                "<span class="hljs-attribute">id</span>": <span class="hljs-value">{
+                  "<span class="hljs-attribute">type</span>": <span class="hljs-value"><span class="hljs-string">"string"</span></span>,
+                  "<span class="hljs-attribute">description</span>": <span class="hljs-value"><span class="hljs-string">"l'id du sousthème"</span>
+                </span>}</span>,
+                "<span class="hljs-attribute">libelle</span>": <span class="hljs-value">{
+                  "<span class="hljs-attribute">type</span>": <span class="hljs-value"><span class="hljs-string">"string"</span></span>,
+                  "<span class="hljs-attribute">description</span>": <span class="hljs-value"><span class="hljs-string">"Le libellé du sousthème"</span>
+                </span>}</span>,
+                "<span class="hljs-attribute">modules</span>": <span class="hljs-value">{
+                  "<span class="hljs-attribute">type</span>": <span class="hljs-value"><span class="hljs-string">"array"</span></span>,
+                  "<span class="hljs-attribute">items</span>": <span class="hljs-value">{
+                    "<span class="hljs-attribute">type</span>": <span class="hljs-value"><span class="hljs-string">"object"</span></span>,
+                    "<span class="hljs-attribute">properties</span>": <span class="hljs-value">{
+                      "<span class="hljs-attribute">id</span>": <span class="hljs-value">{
+                        "<span class="hljs-attribute">type</span>": <span class="hljs-value"><span class="hljs-string">"string"</span></span>,
+                        "<span class="hljs-attribute">description</span>": <span class="hljs-value"><span class="hljs-string">"L'id de la ressource"</span>
+                      </span>}</span>,
+                      "<span class="hljs-attribute">libelle</span>": <span class="hljs-value">{
+                        "<span class="hljs-attribute">type</span>": <span class="hljs-value"><span class="hljs-string">"string"</span></span>,
+                        "<span class="hljs-attribute">description</span>": <span class="hljs-value"><span class="hljs-string">"Le nom du module de formation ou de l'évaluation"</span>
+                      </span>}</span>,
+                      "<span class="hljs-attribute">description</span>": <span class="hljs-value">{
+                        "<span class="hljs-attribute">type</span>": <span class="hljs-value"><span class="hljs-string">"string"</span></span>,
+                        "<span class="hljs-attribute">description</span>": <span class="hljs-value"><span class="hljs-string">"La description du module de formation"</span>
+                      </span>}</span>,
+                      "<span class="hljs-attribute">duree</span>": <span class="hljs-value">{
+                        "<span class="hljs-attribute">type</span>": <span class="hljs-value"><span class="hljs-string">"string"</span></span>,
+                        "<span class="hljs-attribute">description</span>": <span class="hljs-value"><span class="hljs-string">"La durée du module de formation en minutes"</span>
+                      </span>}
+                    </span>}
+                  </span>}
+                </span>}
+              </span>}
+            </span>}
+          </span>}
+        </span>}
+      </span>}</span>,
+      "<span class="hljs-attribute">description</span>": <span class="hljs-value"><span class="hljs-string">"Le catalogue d'évaluation organisé en thème / sous-thème"</span>
+    </span>}
+  </span>}
+</span>}</code></pre><div style="height: 1px;"></div></div></div></div></div><div id="catalogue-affect-evaluations" class="resource"><h3 class="resource-heading">Affect evaluations <a href="https://dev-pf.onlineformapro.com/wcopy/os/api/documentation/index.php#catalogue-affect-evaluations" class="permalink">&nbsp;¶</a></h3><p>Cette action permet d’affecter des évaluations à un utilisateur</p>
+                    <div id="catalogue-affect-evaluations-post" class="action post"><h4 class="action-heading"><div class="name">Affecter des évaluations</div><a href="https://dev-pf.onlineformapro.com/wcopy/os/api/documentation/index.php#catalogue-affect-evaluations-post" class="method post">POST</a><code class="uri">/php5/restapi/catalogue/affect-evaluations</code></h4><h4>Example URI</h4><div class="definition"><span class="method post">POST</span>&nbsp;<span class="uri"><span class="hostname">dev-pf.onlineformapro.com</span>/php5/restapi/catalogue/affect-evaluations</span></div><div class="title"><strong>URI Parameters</strong><div class="collapse-button show"><span class="close">Hide</span><span class="open">Show</span></div></div><div class="collapse-content" style="max-height: 183px;"><dl class="inner"><dt>utilisateur</dt><dd><code>string</code>&nbsp;<span class="required">(required)</span>&nbsp;<span class="text-muted example"><strong>Example:&nbsp;</strong><span>2F81B1853DD87BD88E7BC3E465B59271D149</span></span><p>Le GUID de l’utilisateur</p>
+                                </dd><dt>evals</dt><dd><code>string</code>&nbsp;<span class="required">(required)</span>&nbsp;<span class="text-muted example"><strong>Example:&nbsp;</strong><span>[14578, 21463]</span></span><p>La liste des ids des évaluations à affecter</p>
+                                </dd><dt>prepost</dt><dd><code>TypeEvaluation</code>&nbsp;<span>(optional)</span>&nbsp;<span class="text-muted example"><strong>Example:&nbsp;</strong><span>pre</span></span><p>Le type d’évaluation à affecter (<code>pre</code>, <code>post</code> ou <code>all</code> pour affecter en pre et post). La valeur par défaut est <code>all</code></p>
+                                </dd></dl></div><div class="title"><strong>Request</strong><div class="collapse-button"><span class="close">Hide</span><span class="open">Show</span></div></div><div class="collapse-content"><div class="inner"><h5>Headers</h5><pre><code><span class="hljs-attribute">Content-Type</span>: <span class="hljs-string">multipart/form-data</span><br><span class="hljs-attribute">Access-Token</span>: <span class="hljs-string">6GDLA5g17FJUmw4DO5cfFV7QMPLAbfRo</span></code></pre><div style="height: 1px;"></div><h5>Body</h5><pre><code>utilisateur=2F81B1853DD87BD88E7BC3E465B59271D149</code></pre><div style="height: 1px;"></div></div></div><div class="title"><strong>Response&nbsp;&nbsp;<code>200</code></strong><div class="collapse-button"><span class="close">Hide</span><span class="open">Show</span></div></div><div class="collapse-content"><div class="inner"><h5>Headers</h5><pre><code><span class="hljs-attribute">Content-Type</span>: <span class="hljs-string">application/json</span></code></pre><div style="height: 1px;"></div><h5>Body</h5><pre><code>{
+  "<span class="hljs-attribute">success</span>": <span class="hljs-value"><span class="hljs-string">"true"</span>
+</span>}</code></pre><div style="height: 1px;"></div><h5>Schema</h5><pre><code>{
+  "<span class="hljs-attribute">$schema</span>": <span class="hljs-value"><span class="hljs-string">"http://json-schema.org/draft-04/schema#"</span></span>,
+  "<span class="hljs-attribute">type</span>": <span class="hljs-value"><span class="hljs-string">"object"</span></span>,
+  "<span class="hljs-attribute">properties</span>": <span class="hljs-value">{
+    "<span class="hljs-attribute">success</span>": <span class="hljs-value">{
+      "<span class="hljs-attribute">type</span>": <span class="hljs-value"><span class="hljs-string">"string"</span></span>,
+      "<span class="hljs-attribute">description</span>": <span class="hljs-value"><span class="hljs-string">"`true` si tout s'est bien passé"</span>
+    </span>}
+  </span>}
+</span>}</code></pre><div style="height: 1px;"></div></div></div></div></div><div id="catalogue-catalogue-parcours" class="resource"><h3 class="resource-heading">Catalogue parcours <a href="https://dev-pf.onlineformapro.com/wcopy/os/api/documentation/index.php#catalogue-catalogue-parcours" class="permalink">&nbsp;¶</a></h3><p>Cette action permet de récuperer le catalogue de parcours</p>
+                    <div id="catalogue-catalogue-parcours-get" class="action get"><h4 class="action-heading"><div class="name">Catalogue de parcours</div><a href="https://dev-pf.onlineformapro.com/wcopy/os/api/documentation/index.php#catalogue-catalogue-parcours-get" class="method get">GET</a><code class="uri">/php5/restapi/catalogue/parcours</code></h4><h4>Example URI</h4><div class="definition"><span class="method get">GET</span>&nbsp;<span class="uri"><span class="hostname">dev-pf.onlineformapro.com</span>/php5/restapi/catalogue/parcours</span></div><div class="title"><strong>Request</strong><div class="collapse-button"><span class="close">Hide</span><span class="open">Show</span></div></div><div class="collapse-content"><div class="inner"><h5>Headers</h5><pre><code><span class="hljs-attribute">Access-Token</span>: <span class="hljs-string">6GDLA5g17FJUmw4DO5cfFV7QMPLAbfRo</span></code></pre><div style="height: 1px;"></div></div></div><div class="title"><strong>Response&nbsp;&nbsp;<code>200</code></strong><div class="collapse-button"><span class="close">Hide</span><span class="open">Show</span></div></div><div class="collapse-content"><div class="inner"><h5>Headers</h5><pre><code><span class="hljs-attribute">Content-Type</span>: <span class="hljs-string">application/json</span></code></pre><div style="height: 1px;"></div><h5>Body</h5><pre><code>{
+  "<span class="hljs-attribute">themes</span>": <span class="hljs-value">[
+    {
+      "<span class="hljs-attribute">id</span>": <span class="hljs-value"><span class="hljs-string">"11254"</span></span>,
+      "<span class="hljs-attribute">libelle</span>": <span class="hljs-value"><span class="hljs-string">"Nom du thème"</span></span>,
+      "<span class="hljs-attribute">parcours</span>": <span class="hljs-value">[
+        {
+          "<span class="hljs-attribute">id</span>": <span class="hljs-value"><span class="hljs-string">"1256"</span></span>,
+          "<span class="hljs-attribute">libelle</span>": <span class="hljs-value"><span class="hljs-string">"Nom du parcours"</span></span>,
+          "<span class="hljs-attribute">session</span>": <span class="hljs-value"><span class="hljs-literal">false</span>
+        </span>}
+      ]
+    </span>}
+  ]
+</span>}</code></pre><div style="height: 1px;"></div><h5>Schema</h5><pre><code>{
+  "<span class="hljs-attribute">$schema</span>": <span class="hljs-value"><span class="hljs-string">"http://json-schema.org/draft-04/schema#"</span></span>,
+  "<span class="hljs-attribute">type</span>": <span class="hljs-value"><span class="hljs-string">"object"</span></span>,
+  "<span class="hljs-attribute">properties</span>": <span class="hljs-value">{
+    "<span class="hljs-attribute">themes</span>": <span class="hljs-value">{
+      "<span class="hljs-attribute">type</span>": <span class="hljs-value"><span class="hljs-string">"array"</span></span>,
+      "<span class="hljs-attribute">items</span>": <span class="hljs-value">{
+        "<span class="hljs-attribute">type</span>": <span class="hljs-value"><span class="hljs-string">"object"</span></span>,
+        "<span class="hljs-attribute">properties</span>": <span class="hljs-value">{
+          "<span class="hljs-attribute">id</span>": <span class="hljs-value">{
+            "<span class="hljs-attribute">type</span>": <span class="hljs-value"><span class="hljs-string">"string"</span></span>,
+            "<span class="hljs-attribute">description</span>": <span class="hljs-value"><span class="hljs-string">"l'id du thème"</span>
+          </span>}</span>,
+          "<span class="hljs-attribute">libelle</span>": <span class="hljs-value">{
+            "<span class="hljs-attribute">type</span>": <span class="hljs-value"><span class="hljs-string">"string"</span></span>,
+            "<span class="hljs-attribute">description</span>": <span class="hljs-value"><span class="hljs-string">"Le libellé du thème"</span>
+          </span>}</span>,
+          "<span class="hljs-attribute">parcours</span>": <span class="hljs-value">{
+            "<span class="hljs-attribute">type</span>": <span class="hljs-value"><span class="hljs-string">"array"</span></span>,
+            "<span class="hljs-attribute">items</span>": <span class="hljs-value">{
+              "<span class="hljs-attribute">type</span>": <span class="hljs-value"><span class="hljs-string">"object"</span></span>,
+              "<span class="hljs-attribute">properties</span>": <span class="hljs-value">{
+                "<span class="hljs-attribute">id</span>": <span class="hljs-value">{
+                  "<span class="hljs-attribute">type</span>": <span class="hljs-value"><span class="hljs-string">"string"</span></span>,
+                  "<span class="hljs-attribute">description</span>": <span class="hljs-value"><span class="hljs-string">"l'id du parcours"</span>
+                </span>}</span>,
+                "<span class="hljs-attribute">libelle</span>": <span class="hljs-value">{
+                  "<span class="hljs-attribute">type</span>": <span class="hljs-value"><span class="hljs-string">"string"</span></span>,
+                  "<span class="hljs-attribute">description</span>": <span class="hljs-value"><span class="hljs-string">"Le libellé du parcours"</span>
+                </span>}</span>,
+                "<span class="hljs-attribute">session</span>": <span class="hljs-value">{
+                  "<span class="hljs-attribute">type</span>": <span class="hljs-value"><span class="hljs-string">"boolean"</span></span>,
+                  "<span class="hljs-attribute">description</span>": <span class="hljs-value"><span class="hljs-string">"True si le parcours est une session"</span>
+                </span>}
+              </span>}
+            </span>}
+          </span>}
+        </span>}
+      </span>}</span>,
+      "<span class="hljs-attribute">description</span>": <span class="hljs-value"><span class="hljs-string">"Le catalogue de parcours organisé en thème / sous-thème"</span>
+    </span>}
+  </span>}
+</span>}</code></pre><div style="height: 1px;"></div></div></div></div></div><div id="catalogue-affect-parcours" class="resource"><h3 class="resource-heading">Affect parcours <a href="https://dev-pf.onlineformapro.com/wcopy/os/api/documentation/index.php#catalogue-affect-parcours" class="permalink">&nbsp;¶</a></h3><p>Cette action permet d’affecter des parcours à un utilisateur</p>
+                    <div id="catalogue-affect-parcours-post" class="action post"><h4 class="action-heading"><div class="name">Affecter des parcours</div><a href="https://dev-pf.onlineformapro.com/wcopy/os/api/documentation/index.php#catalogue-affect-parcours-post" class="method post">POST</a><code class="uri">/php5/restapi/catalogue/affect-parcours</code></h4><h4>Example URI</h4><div class="definition"><span class="method post">POST</span>&nbsp;<span class="uri"><span class="hostname">dev-pf.onlineformapro.com</span>/php5/restapi/catalogue/affect-parcours</span></div><div class="title"><strong>URI Parameters</strong><div class="collapse-button show"><span class="close">Hide</span><span class="open">Show</span></div></div><div class="collapse-content" style="max-height: 163px;"><dl class="inner"><dt>utilisateur</dt><dd><code>string</code>&nbsp;<span class="required">(required)</span>&nbsp;<span class="text-muted example"><strong>Example:&nbsp;</strong><span>2F81B1853DD87BD88E7BC3E465B59271D149</span></span><p>Le GUID de l’utilisateur</p>
+                                </dd><dt>parcours</dt><dd><code>string</code>&nbsp;<span class="required">(required)</span>&nbsp;<span class="text-muted example"><strong>Example:&nbsp;</strong><span>[14578, 21463]</span></span><p>La liste des ids des parcours à affecter</p>
+                                </dd><dt>themes</dt><dd><code>string</code>&nbsp;<span>(optional)</span>&nbsp;<span class="text-muted example"><strong>Example:&nbsp;</strong><span>[19458, 14753]</span></span><p>La liste des ids des thèmes à affecter</p>
+                                </dd></dl></div><div class="title"><strong>Request</strong><div class="collapse-button"><span class="close">Hide</span><span class="open">Show</span></div></div><div class="collapse-content"><div class="inner"><h5>Headers</h5><pre><code><span class="hljs-attribute">Content-Type</span>: <span class="hljs-string">multipart/form-data</span><br><span class="hljs-attribute">Access-Token</span>: <span class="hljs-string">6GDLA5g17FJUmw4DO5cfFV7QMPLAbfRo</span></code></pre><div style="height: 1px;"></div><h5>Body</h5><pre><code>utilisateur=2F81B1853DD87BD88E7BC3E465B59271D149</code></pre><div style="height: 1px;"></div></div></div><div class="title"><strong>Response&nbsp;&nbsp;<code>200</code></strong><div class="collapse-button"><span class="close">Hide</span><span class="open">Show</span></div></div><div class="collapse-content"><div class="inner"><h5>Headers</h5><pre><code><span class="hljs-attribute">Content-Type</span>: <span class="hljs-string">application/json</span></code></pre><div style="height: 1px;"></div><h5>Body</h5><pre><code>{
+  "<span class="hljs-attribute">success</span>": <span class="hljs-value"><span class="hljs-string">"true"</span>
+</span>}</code></pre><div style="height: 1px;"></div><h5>Schema</h5><pre><code>{
+  "<span class="hljs-attribute">$schema</span>": <span class="hljs-value"><span class="hljs-string">"http://json-schema.org/draft-04/schema#"</span></span>,
+  "<span class="hljs-attribute">type</span>": <span class="hljs-value"><span class="hljs-string">"object"</span></span>,
+  "<span class="hljs-attribute">properties</span>": <span class="hljs-value">{
+    "<span class="hljs-attribute">success</span>": <span class="hljs-value">{
+      "<span class="hljs-attribute">type</span>": <span class="hljs-value"><span class="hljs-string">"string"</span></span>,
+      "<span class="hljs-attribute">description</span>": <span class="hljs-value"><span class="hljs-string">"`true` si tout s'est bien passé"</span>
+    </span>}
+  </span>}
+</span>}</code></pre><div style="height: 1px;"></div></div></div></div></div></section><section id="reporting" class="resource-group"><h2 class="group-heading">Reporting <a href="https://dev-pf.onlineformapro.com/wcopy/os/api/documentation/index.php#reporting" class="permalink">¶</a></h2><div id="reporting-get-suivi" class="resource"><h3 class="resource-heading">Get suivi <a href="https://dev-pf.onlineformapro.com/wcopy/os/api/documentation/index.php#reporting-get-suivi" class="permalink">&nbsp;¶</a></h3><p>Cette action permet de récuperer le suivi utilisateur.</p>
+                    <div id="reporting-get-suivi-post" class="action post"><h4 class="action-heading"><div class="name">Récuperer le suivi par theme / soustheme / module d'un utilisateur</div><a href="https://dev-pf.onlineformapro.com/wcopy/os/api/documentation/index.php#reporting-get-suivi-post" class="method post">POST</a><code class="uri">/php5/restapi/reporting/suivi</code></h4><h4>Example URI</h4><div class="definition"><span class="method post">POST</span>&nbsp;<span class="uri"><span class="hostname">dev-pf.onlineformapro.com</span>/php5/restapi/reporting/suivi</span></div><div class="title"><strong>URI Parameters</strong><div class="collapse-button show"><span class="close">Hide</span><span class="open">Show</span></div></div><div class="collapse-content" style="max-height: 163px;"><dl class="inner"><dt>utilisateur</dt><dd><code>string</code>&nbsp;<span class="required">(required)</span>&nbsp;<span class="text-muted example"><strong>Example:&nbsp;</strong><span>PMQWH484ECF2D13SQP330715DNQ6774B71Z4</span></span><p>L’identifiant unique (GUID) de l’utilisateur souhaité.</p>
+                                </dd><dt>theme</dt><dd><code>string</code>&nbsp;<span>(optional)</span>&nbsp;<span class="text-muted example"><strong>Example:&nbsp;</strong><span>24578</span></span><p>L’id du theme pour lequel on souhaite récuperer le suivi.</p>
+                                </dd><dt>soustheme</dt><dd><code>string</code>&nbsp;<span>(optional)</span>&nbsp;<span class="text-muted example"><strong>Example:&nbsp;</strong><span>10247</span></span><p>L’id du sous-theme pour lequel on souhaite récuperer le suivi.</p>
+                                </dd></dl></div><div class="title"><strong>Request</strong><div class="collapse-button"><span class="close">Hide</span><span class="open">Show</span></div></div><div class="collapse-content"><div class="inner"><h5>Headers</h5><pre><code><span class="hljs-attribute">Content-Type</span>: <span class="hljs-string">multipart/form-data</span><br><span class="hljs-attribute">Access-Token</span>: <span class="hljs-string">6GDLA5g17FJUmw4DO5cfFV7QMPLAbfRo</span></code></pre><div style="height: 1px;"></div><h5>Body</h5><pre><code>utilisateur=PMQWH484ECF2D13SQP330715DNQ6774B71Z4</code></pre><div style="height: 1px;"></div></div></div><div class="title"><strong>Response&nbsp;&nbsp;<code>200</code></strong><div class="collapse-button"><span class="close">Hide</span><span class="open">Show</span></div></div><div class="collapse-content"><div class="inner"><h5>Headers</h5><pre><code><span class="hljs-attribute">Content-Type</span>: <span class="hljs-string">application/json</span></code></pre><div style="height: 1px;"></div><h5>Body</h5><pre><code>{
+  "<span class="hljs-attribute">themes</span>": <span class="hljs-value">[
+    {
+      "<span class="hljs-attribute">id</span>": <span class="hljs-value"><span class="hljs-number">12478</span></span>,
+      "<span class="hljs-attribute">avancement</span>": <span class="hljs-value"><span class="hljs-number">1</span>
+    </span>}
+  ]</span>,
+  "<span class="hljs-attribute">sousthemes</span>": <span class="hljs-value">[
+    {
+      "<span class="hljs-attribute">id</span>": <span class="hljs-value"><span class="hljs-number">12478</span></span>,
+      "<span class="hljs-attribute">avancement</span>": <span class="hljs-value"><span class="hljs-number">1</span>
+    </span>}
+  ]</span>,
+  "<span class="hljs-attribute">modules</span>": <span class="hljs-value">[
+    {
+      "<span class="hljs-attribute">libelle</span>": <span class="hljs-value"><span class="hljs-string">"Nom du module"</span></span>,
+      "<span class="hljs-attribute">statut</span>": <span class="hljs-value"><span class="hljs-string">"I"</span></span>,
+      "<span class="hljs-attribute">avancement</span>": <span class="hljs-value"><span class="hljs-number">100</span></span>,
+      "<span class="hljs-attribute">connexions</span>": <span class="hljs-value"><span class="hljs-number">4</span></span>,
+      "<span class="hljs-attribute">temps</span>": <span class="hljs-value"><span class="hljs-number">1487</span></span>,
+      "<span class="hljs-attribute">date_derniere_connexion</span>": <span class="hljs-value"><span class="hljs-string">"2020-04-25 11:26:39"</span></span>,
+      "<span class="hljs-attribute">id</span>": <span class="hljs-value"><span class="hljs-number">16547</span>
+    </span>}
+  ]
+</span>}</code></pre><div style="height: 1px;"></div><h5>Schema</h5><pre><code>{
+  "<span class="hljs-attribute">$schema</span>": <span class="hljs-value"><span class="hljs-string">"http://json-schema.org/draft-04/schema#"</span></span>,
+  "<span class="hljs-attribute">type</span>": <span class="hljs-value"><span class="hljs-string">"object"</span></span>,
+  "<span class="hljs-attribute">properties</span>": <span class="hljs-value">{
+    "<span class="hljs-attribute">themes</span>": <span class="hljs-value">{
+      "<span class="hljs-attribute">type</span>": <span class="hljs-value"><span class="hljs-string">"array"</span></span>,
+      "<span class="hljs-attribute">items</span>": <span class="hljs-value">{
+        "<span class="hljs-attribute">type</span>": <span class="hljs-value"><span class="hljs-string">"object"</span></span>,
+        "<span class="hljs-attribute">properties</span>": <span class="hljs-value">{
+          "<span class="hljs-attribute">id</span>": <span class="hljs-value">{
+            "<span class="hljs-attribute">type</span>": <span class="hljs-value"><span class="hljs-string">"number"</span></span>,
+            "<span class="hljs-attribute">description</span>": <span class="hljs-value"><span class="hljs-string">"l'id du theme ou du sous-theme"</span>
+          </span>}</span>,
+          "<span class="hljs-attribute">avancement</span>": <span class="hljs-value">{
+            "<span class="hljs-attribute">type</span>": <span class="hljs-value"><span class="hljs-string">"number"</span></span>,
+            "<span class="hljs-attribute">description</span>": <span class="hljs-value"><span class="hljs-string">"Le pourcentage d'avancement actuel en pourcent"</span>
+          </span>}
+        </span>}
+      </span>}</span>,
+      "<span class="hljs-attribute">description</span>": <span class="hljs-value"><span class="hljs-string">"la liste des suivis par theme"</span>
+    </span>}</span>,
+    "<span class="hljs-attribute">sousthemes</span>": <span class="hljs-value">{
+      "<span class="hljs-attribute">type</span>": <span class="hljs-value"><span class="hljs-string">"array"</span></span>,
+      "<span class="hljs-attribute">items</span>": <span class="hljs-value">{
+        "<span class="hljs-attribute">type</span>": <span class="hljs-value"><span class="hljs-string">"object"</span></span>,
+        "<span class="hljs-attribute">properties</span>": <span class="hljs-value">{
+          "<span class="hljs-attribute">id</span>": <span class="hljs-value">{
+            "<span class="hljs-attribute">type</span>": <span class="hljs-value"><span class="hljs-string">"number"</span></span>,
+            "<span class="hljs-attribute">description</span>": <span class="hljs-value"><span class="hljs-string">"l'id du theme ou du sous-theme"</span>
+          </span>}</span>,
+          "<span class="hljs-attribute">avancement</span>": <span class="hljs-value">{
+            "<span class="hljs-attribute">type</span>": <span class="hljs-value"><span class="hljs-string">"number"</span></span>,
+            "<span class="hljs-attribute">description</span>": <span class="hljs-value"><span class="hljs-string">"Le pourcentage d'avancement actuel en pourcent"</span>
+          </span>}
+        </span>}
+      </span>}</span>,
+      "<span class="hljs-attribute">description</span>": <span class="hljs-value"><span class="hljs-string">"la liste des suivis par soustheme"</span>
+    </span>}</span>,
+    "<span class="hljs-attribute">modules</span>": <span class="hljs-value">{
+      "<span class="hljs-attribute">type</span>": <span class="hljs-value"><span class="hljs-string">"array"</span></span>,
+      "<span class="hljs-attribute">items</span>": <span class="hljs-value">{
+        "<span class="hljs-attribute">type</span>": <span class="hljs-value"><span class="hljs-string">"object"</span></span>,
+        "<span class="hljs-attribute">properties</span>": <span class="hljs-value">{
+          "<span class="hljs-attribute">libelle</span>": <span class="hljs-value">{
+            "<span class="hljs-attribute">type</span>": <span class="hljs-value"><span class="hljs-string">"string"</span></span>,
+            "<span class="hljs-attribute">description</span>": <span class="hljs-value"><span class="hljs-string">"Le libelle de la formation ou du parcours"</span>
+          </span>}</span>,
+          "<span class="hljs-attribute">statut</span>": <span class="hljs-value">{
+            "<span class="hljs-attribute">type</span>": <span class="hljs-value"><span class="hljs-string">"string"</span></span>,
+            "<span class="hljs-attribute">enum</span>": <span class="hljs-value">[
+              <span class="hljs-string">"I"</span>,
+              <span class="hljs-string">"not attempted"</span>,
+              <span class="hljs-string">"incomplete"</span>,
+              <span class="hljs-string">"completed"</span>,
+              <span class="hljs-string">"passed"</span>,
+              <span class="hljs-string">"failed"</span>
+            ]</span>,
+            "<span class="hljs-attribute">description</span>": <span class="hljs-value"><span class="hljs-string">"Le status de la formation ou du parcours"</span>
+          </span>}</span>,
+          "<span class="hljs-attribute">avancement</span>": <span class="hljs-value">{
+            "<span class="hljs-attribute">type</span>": <span class="hljs-value"><span class="hljs-string">"number"</span></span>,
+            "<span class="hljs-attribute">description</span>": <span class="hljs-value"><span class="hljs-string">"Le pourcentage d'avancement actuel en pourcent"</span>
+          </span>}</span>,
+          "<span class="hljs-attribute">connexions</span>": <span class="hljs-value">{
+            "<span class="hljs-attribute">type</span>": <span class="hljs-value"><span class="hljs-string">"number"</span></span>,
+            "<span class="hljs-attribute">description</span>": <span class="hljs-value"><span class="hljs-string">"Le nombre actuel de connection au module ou au parcours"</span>
+          </span>}</span>,
+          "<span class="hljs-attribute">temps</span>": <span class="hljs-value">{
+            "<span class="hljs-attribute">type</span>": <span class="hljs-value"><span class="hljs-string">"number"</span></span>,
+            "<span class="hljs-attribute">description</span>": <span class="hljs-value"><span class="hljs-string">"Le temps de connexion au module ou au parcours en secondes"</span>
+          </span>}</span>,
+          "<span class="hljs-attribute">date_derniere_connexion</span>": <span class="hljs-value">{
+            "<span class="hljs-attribute">type</span>": <span class="hljs-value"><span class="hljs-string">"string"</span></span>,
+            "<span class="hljs-attribute">description</span>": <span class="hljs-value"><span class="hljs-string">"La date de dernière connexion au module au format `YYYY-mm-dd hh:ii:ss`"</span>
+          </span>}</span>,
+          "<span class="hljs-attribute">id</span>": <span class="hljs-value">{
+            "<span class="hljs-attribute">type</span>": <span class="hljs-value"><span class="hljs-string">"number"</span></span>,
+            "<span class="hljs-attribute">description</span>": <span class="hljs-value"><span class="hljs-string">"L'id du module de formation"</span>
+          </span>}
+        </span>}
+      </span>}</span>,
+      "<span class="hljs-attribute">description</span>": <span class="hljs-value"><span class="hljs-string">"la liste des suivis par modules"</span>
+    </span>}
+  </span>}
+</span>}</code></pre><div style="height: 1px;"></div></div></div></div><div id="reporting-get-suivi-post-1" class="action post"><h4 class="action-heading"><div class="name">Récuperer le suivi par theme / soustheme / module de plusieurs utilisateurs</div><a href="https://dev-pf.onlineformapro.com/wcopy/os/api/documentation/index.php#reporting-get-suivi-post-1" class="method post">POST</a><code class="uri">/php5/restapi/reporting/suivi</code></h4><h4>Example URI</h4><div class="definition"><span class="method post">POST</span>&nbsp;<span class="uri"><span class="hostname">dev-pf.onlineformapro.com</span>/php5/restapi/reporting/suivi</span></div><div class="title"><strong>URI Parameters</strong><div class="collapse-button show"><span class="close">Hide</span><span class="open">Show</span></div></div><div class="collapse-content" style="max-height: 302px;"><dl class="inner"><dt>utilisateur</dt><dd><code>string</code>&nbsp;<span>(optional)</span>&nbsp;<span class="text-muted example"><strong>Example:&nbsp;</strong><span>["PMQWH484ECF2D13SQP330715DNQ6774B71Z4", "GTHSH484E5HGD78SQP330715DNQ6774B7DB9"]</span></span><p>La liste des identifiants uniques (GUID) des l’utilisateurs souhaités sous forme de tableau. Si non spécifié, les informations de tout les utilisateurs sont retournées.</p>
+                                </dd><dt>theme</dt><dd><code>string</code>&nbsp;<span>(optional)</span>&nbsp;<span class="text-muted example"><strong>Example:&nbsp;</strong><span>24578</span></span><p>L’id du theme pour lequel on souhaite récuperer le suivi. Si le paramètre <code>utilisateur</code> n’est pas spécifié, le paramètre <code>theme</code> ou le paramètre <code>soustheme</code> est obligatoire.</p>
+                                </dd><dt>soustheme</dt><dd><code>string</code>&nbsp;<span>(optional)</span>&nbsp;<span class="text-muted example"><strong>Example:&nbsp;</strong><span>10247</span></span><p>L’id du sous-theme pour lequel on souhaite récuperer le suivi. Si le paramètre <code>utilisateur</code> n’est pas spécifié, le paramètre <code>theme</code> ou le paramètre <code>soustheme</code> est obligatoire.</p>
+                                </dd></dl></div><div class="title"><strong>Request</strong><div class="collapse-button"><span class="close">Hide</span><span class="open">Show</span></div></div><div class="collapse-content"><div class="inner"><h5>Headers</h5><pre><code><span class="hljs-attribute">Content-Type</span>: <span class="hljs-string">multipart/form-data</span><br><span class="hljs-attribute">Access-Token</span>: <span class="hljs-string">6GDLA5g17FJUmw4DO5cfFV7QMPLAbfRo</span></code></pre><div style="height: 1px;"></div><h5>Body</h5><pre><code>utilisateur=[<span class="hljs-string">"PMQWH484ECF2D13SQP330715DNQ6774B71Z4"</span>, <span class="hljs-string">"GTHSH484E5HGD78SQP330715DNQ6774B7DB9"</span>]&amp;theme=<span class="hljs-number">24578</span></code></pre><div style="height: 1px;"></div></div></div><div class="title"><strong>Response&nbsp;&nbsp;<code>200</code></strong><div class="collapse-button"><span class="close">Hide</span><span class="open">Show</span></div></div><div class="collapse-content"><div class="inner"><h5>Headers</h5><pre><code><span class="hljs-attribute">Content-Type</span>: <span class="hljs-string">application/json</span></code></pre><div style="height: 1px;"></div><h5>Body</h5><pre><code>{
+  "<span class="hljs-attribute">usagers</span>": <span class="hljs-value">[
+    {
+      "<span class="hljs-attribute">themes</span>": <span class="hljs-value">[
+        {
+          "<span class="hljs-attribute">id</span>": <span class="hljs-value"><span class="hljs-number">12478</span></span>,
+          "<span class="hljs-attribute">avancement</span>": <span class="hljs-value"><span class="hljs-number">1</span>
+        </span>}
+      ]</span>,
+      "<span class="hljs-attribute">sousthemes</span>": <span class="hljs-value">[
+        {
+          "<span class="hljs-attribute">id</span>": <span class="hljs-value"><span class="hljs-number">12478</span></span>,
+          "<span class="hljs-attribute">avancement</span>": <span class="hljs-value"><span class="hljs-number">1</span>
+        </span>}
+      ]</span>,
+      "<span class="hljs-attribute">modules</span>": <span class="hljs-value">[
+        {
+          "<span class="hljs-attribute">libelle</span>": <span class="hljs-value"><span class="hljs-string">"Nom du module"</span></span>,
+          "<span class="hljs-attribute">statut</span>": <span class="hljs-value"><span class="hljs-string">"I"</span></span>,
+          "<span class="hljs-attribute">avancement</span>": <span class="hljs-value"><span class="hljs-number">100</span></span>,
+          "<span class="hljs-attribute">connexions</span>": <span class="hljs-value"><span class="hljs-number">4</span></span>,
+          "<span class="hljs-attribute">temps</span>": <span class="hljs-value"><span class="hljs-number">1487</span></span>,
+          "<span class="hljs-attribute">date_derniere_connexion</span>": <span class="hljs-value"><span class="hljs-string">"2020-04-25 11:26:39"</span></span>,
+          "<span class="hljs-attribute">id</span>": <span class="hljs-value"><span class="hljs-number">16547</span>
+        </span>}
+      ]</span>,
+      "<span class="hljs-attribute">guid</span>": <span class="hljs-value"><span class="hljs-string">"PMQWH484ECF2D13SQP330715DNQ6774B71Z4"</span></span>,
+      "<span class="hljs-attribute">nom</span>": <span class="hljs-value"><span class="hljs-string">"DOE"</span></span>,
+      "<span class="hljs-attribute">prenom</span>": <span class="hljs-value"><span class="hljs-string">"John"</span>
+    </span>}
+  ]
+</span>}</code></pre><div style="height: 1px;"></div><h5>Schema</h5><pre><code>{
+  "<span class="hljs-attribute">$schema</span>": <span class="hljs-value"><span class="hljs-string">"http://json-schema.org/draft-04/schema#"</span></span>,
+  "<span class="hljs-attribute">type</span>": <span class="hljs-value"><span class="hljs-string">"object"</span></span>,
+  "<span class="hljs-attribute">properties</span>": <span class="hljs-value">{
+    "<span class="hljs-attribute">usagers</span>": <span class="hljs-value">{
+      "<span class="hljs-attribute">type</span>": <span class="hljs-value"><span class="hljs-string">"array"</span></span>,
+      "<span class="hljs-attribute">items</span>": <span class="hljs-value">{
+        "<span class="hljs-attribute">type</span>": <span class="hljs-value"><span class="hljs-string">"object"</span></span>,
+        "<span class="hljs-attribute">properties</span>": <span class="hljs-value">{
+          "<span class="hljs-attribute">themes</span>": <span class="hljs-value">{
+            "<span class="hljs-attribute">type</span>": <span class="hljs-value"><span class="hljs-string">"array"</span></span>,
+            "<span class="hljs-attribute">items</span>": <span class="hljs-value">{
+              "<span class="hljs-attribute">type</span>": <span class="hljs-value"><span class="hljs-string">"object"</span></span>,
+              "<span class="hljs-attribute">properties</span>": <span class="hljs-value">{
+                "<span class="hljs-attribute">id</span>": <span class="hljs-value">{
+                  "<span class="hljs-attribute">type</span>": <span class="hljs-value"><span class="hljs-string">"number"</span></span>,
+                  "<span class="hljs-attribute">description</span>": <span class="hljs-value"><span class="hljs-string">"l'id du theme ou du sous-theme"</span>
+                </span>}</span>,
+                "<span class="hljs-attribute">avancement</span>": <span class="hljs-value">{
+                  "<span class="hljs-attribute">type</span>": <span class="hljs-value"><span class="hljs-string">"number"</span></span>,
+                  "<span class="hljs-attribute">description</span>": <span class="hljs-value"><span class="hljs-string">"Le pourcentage d'avancement actuel en pourcent"</span>
+                </span>}
+              </span>}
+            </span>}</span>,
+            "<span class="hljs-attribute">description</span>": <span class="hljs-value"><span class="hljs-string">"la liste des suivis par theme"</span>
+          </span>}</span>,
+          "<span class="hljs-attribute">sousthemes</span>": <span class="hljs-value">{
+            "<span class="hljs-attribute">type</span>": <span class="hljs-value"><span class="hljs-string">"array"</span></span>,
+            "<span class="hljs-attribute">items</span>": <span class="hljs-value">{
+              "<span class="hljs-attribute">type</span>": <span class="hljs-value"><span class="hljs-string">"object"</span></span>,
+              "<span class="hljs-attribute">properties</span>": <span class="hljs-value">{
+                "<span class="hljs-attribute">id</span>": <span class="hljs-value">{
+                  "<span class="hljs-attribute">type</span>": <span class="hljs-value"><span class="hljs-string">"number"</span></span>,
+                  "<span class="hljs-attribute">description</span>": <span class="hljs-value"><span class="hljs-string">"l'id du theme ou du sous-theme"</span>
+                </span>}</span>,
+                "<span class="hljs-attribute">avancement</span>": <span class="hljs-value">{
+                  "<span class="hljs-attribute">type</span>": <span class="hljs-value"><span class="hljs-string">"number"</span></span>,
+                  "<span class="hljs-attribute">description</span>": <span class="hljs-value"><span class="hljs-string">"Le pourcentage d'avancement actuel en pourcent"</span>
+                </span>}
+              </span>}
+            </span>}</span>,
+            "<span class="hljs-attribute">description</span>": <span class="hljs-value"><span class="hljs-string">"la liste des suivis par soustheme"</span>
+          </span>}</span>,
+          "<span class="hljs-attribute">modules</span>": <span class="hljs-value">{
+            "<span class="hljs-attribute">type</span>": <span class="hljs-value"><span class="hljs-string">"array"</span></span>,
+            "<span class="hljs-attribute">items</span>": <span class="hljs-value">{
+              "<span class="hljs-attribute">type</span>": <span class="hljs-value"><span class="hljs-string">"object"</span></span>,
+              "<span class="hljs-attribute">properties</span>": <span class="hljs-value">{
+                "<span class="hljs-attribute">libelle</span>": <span class="hljs-value">{
+                  "<span class="hljs-attribute">type</span>": <span class="hljs-value"><span class="hljs-string">"string"</span></span>,
+                  "<span class="hljs-attribute">description</span>": <span class="hljs-value"><span class="hljs-string">"Le libelle de la formation ou du parcours"</span>
+                </span>}</span>,
+                "<span class="hljs-attribute">statut</span>": <span class="hljs-value">{
+                  "<span class="hljs-attribute">type</span>": <span class="hljs-value"><span class="hljs-string">"string"</span></span>,
+                  "<span class="hljs-attribute">enum</span>": <span class="hljs-value">[
+                    <span class="hljs-string">"I"</span>,
+                    <span class="hljs-string">"not attempted"</span>,
+                    <span class="hljs-string">"incomplete"</span>,
+                    <span class="hljs-string">"completed"</span>,
+                    <span class="hljs-string">"passed"</span>,
+                    <span class="hljs-string">"failed"</span>
+                  ]</span>,
+                  "<span class="hljs-attribute">description</span>": <span class="hljs-value"><span class="hljs-string">"Le status de la formation ou du parcours"</span>
+                </span>}</span>,
+                "<span class="hljs-attribute">avancement</span>": <span class="hljs-value">{
+                  "<span class="hljs-attribute">type</span>": <span class="hljs-value"><span class="hljs-string">"number"</span></span>,
+                  "<span class="hljs-attribute">description</span>": <span class="hljs-value"><span class="hljs-string">"Le pourcentage d'avancement actuel en pourcent"</span>
+                </span>}</span>,
+                "<span class="hljs-attribute">connexions</span>": <span class="hljs-value">{
+                  "<span class="hljs-attribute">type</span>": <span class="hljs-value"><span class="hljs-string">"number"</span></span>,
+                  "<span class="hljs-attribute">description</span>": <span class="hljs-value"><span class="hljs-string">"Le nombre actuel de connection au module ou au parcours"</span>
+                </span>}</span>,
+                "<span class="hljs-attribute">temps</span>": <span class="hljs-value">{
+                  "<span class="hljs-attribute">type</span>": <span class="hljs-value"><span class="hljs-string">"number"</span></span>,
+                  "<span class="hljs-attribute">description</span>": <span class="hljs-value"><span class="hljs-string">"Le temps de connexion au module ou au parcours en secondes"</span>
+                </span>}</span>,
+                "<span class="hljs-attribute">date_derniere_connexion</span>": <span class="hljs-value">{
+                  "<span class="hljs-attribute">type</span>": <span class="hljs-value"><span class="hljs-string">"string"</span></span>,
+                  "<span class="hljs-attribute">description</span>": <span class="hljs-value"><span class="hljs-string">"La date de dernière connexion au module au format `YYYY-mm-dd hh:ii:ss`"</span>
+                </span>}</span>,
+                "<span class="hljs-attribute">id</span>": <span class="hljs-value">{
+                  "<span class="hljs-attribute">type</span>": <span class="hljs-value"><span class="hljs-string">"number"</span></span>,
+                  "<span class="hljs-attribute">description</span>": <span class="hljs-value"><span class="hljs-string">"L'id du module de formation"</span>
+                </span>}
+              </span>}
+            </span>}</span>,
+            "<span class="hljs-attribute">description</span>": <span class="hljs-value"><span class="hljs-string">"la liste des suivis par modules"</span>
+          </span>}</span>,
+          "<span class="hljs-attribute">guid</span>": <span class="hljs-value">{
+            "<span class="hljs-attribute">type</span>": <span class="hljs-value"><span class="hljs-string">"string"</span></span>,
+            "<span class="hljs-attribute">description</span>": <span class="hljs-value"><span class="hljs-string">"l'identifiant unique (GUID) de l'utilisateur"</span>
+          </span>}</span>,
+          "<span class="hljs-attribute">nom</span>": <span class="hljs-value">{
+            "<span class="hljs-attribute">type</span>": <span class="hljs-value"><span class="hljs-string">"string"</span></span>,
+            "<span class="hljs-attribute">description</span>": <span class="hljs-value"><span class="hljs-string">"Le nom de l'utilisateur"</span>
+          </span>}</span>,
+          "<span class="hljs-attribute">prenom</span>": <span class="hljs-value">{
+            "<span class="hljs-attribute">type</span>": <span class="hljs-value"><span class="hljs-string">"string"</span></span>,
+            "<span class="hljs-attribute">description</span>": <span class="hljs-value"><span class="hljs-string">"Le prenom de l'utilisateur"</span>
+          </span>}
+        </span>}
+      </span>}</span>,
+      "<span class="hljs-attribute">description</span>": <span class="hljs-value"><span class="hljs-string">"la liste des suivis par usager"</span>
+    </span>}
+  </span>}
+</span>}</code></pre><div style="height: 1px;"></div></div></div></div><div id="reporting-get-suivi-post-2" class="action post"><h4 class="action-heading"><div class="name">Récuperer le suivi d'une formation ou d'un parcours spécifique</div><a href="https://dev-pf.onlineformapro.com/wcopy/os/api/documentation/index.php#reporting-get-suivi-post-2" class="method post">POST</a><code class="uri">/php5/restapi/reporting/suivi</code></h4><h4>Example URI</h4><div class="definition"><span class="method post">POST</span>&nbsp;<span class="uri"><span class="hostname">dev-pf.onlineformapro.com</span>/php5/restapi/reporting/suivi</span></div><div class="title"><strong>URI Parameters</strong><div class="collapse-button show"><span class="close">Hide</span><span class="open">Show</span></div></div><div class="collapse-content" style="max-height: 283px;"><dl class="inner"><dt>utilisateur</dt><dd><code>string</code>&nbsp;<span>(optional)</span>&nbsp;<span class="text-muted example"><strong>Example:&nbsp;</strong><span>PMQWH484ECF2D13SQP330715DNQ6774B71Z4</span></span><p>L’identifiant unique (GUID) de l’utilisateur souhaité. Si non spécifié, les informations de tout les utilisateurs sont retournées. Il est possible de récuperer le suivi de plusieurs utilisateur en utilisant cette syntaxe : <code>["PMQWH484ECF2D13SQP330715DNQ6774B71Z4", "GTHSH484E5HGD78SQP330715DNQ6774B7DB9"]</code></p>
+                                </dd><dt>formation</dt><dd><code>string</code>&nbsp;<span>(optional)</span>&nbsp;<span class="text-muted example"><strong>Example:&nbsp;</strong><span>18720</span></span><p>L’id de la formation pour laquelle on souhaite récuperer le suivi. Au moins un id de parcours ou un id de module de formation doit etre renseigné.</p>
+                                </dd><dt>parcours</dt><dd><code>string</code>&nbsp;<span>(optional)</span>&nbsp;<span class="text-muted example"><strong>Example:&nbsp;</strong><span>174536</span></span><p>L’id du parcours pour lequel on souhaite récuperer le suivi. Au moins un id parcours ou un id de module de formation doit etre renseigné.</p>
+                                </dd></dl></div><div class="title"><strong>Request</strong><div class="collapse-button"><span class="close">Hide</span><span class="open">Show</span></div></div><div class="collapse-content"><div class="inner"><h5>Headers</h5><pre><code><span class="hljs-attribute">Content-Type</span>: <span class="hljs-string">multipart/form-data</span><br><span class="hljs-attribute">Access-Token</span>: <span class="hljs-string">6GDLA5g17FJUmw4DO5cfFV7QMPLAbfRo</span></code></pre><div style="height: 1px;"></div><h5>Body</h5><pre><code>utilisateur=PMQWH484ECF2D13SQP330715DNQ6774B71Z4&amp;formation=18720</code></pre><div style="height: 1px;"></div></div></div><div class="title"><strong>Response&nbsp;&nbsp;<code>200</code></strong><div class="collapse-button"><span class="close">Hide</span><span class="open">Show</span></div></div><div class="collapse-content"><div class="inner"><h5>Headers</h5><pre><code><span class="hljs-attribute">Content-Type</span>: <span class="hljs-string">application/json</span></code></pre><div style="height: 1px;"></div><h5>Body</h5><pre><code>{
+  "<span class="hljs-attribute">usagers</span>": <span class="hljs-value">[
+    {
+      "<span class="hljs-attribute">libelle</span>": <span class="hljs-value"><span class="hljs-string">"Nom du module"</span></span>,
+      "<span class="hljs-attribute">statut</span>": <span class="hljs-value"><span class="hljs-string">"I"</span></span>,
+      "<span class="hljs-attribute">avancement</span>": <span class="hljs-value"><span class="hljs-number">100</span></span>,
+      "<span class="hljs-attribute">connexions</span>": <span class="hljs-value"><span class="hljs-number">4</span></span>,
+      "<span class="hljs-attribute">temps</span>": <span class="hljs-value"><span class="hljs-number">1487</span></span>,
+      "<span class="hljs-attribute">date_derniere_connexion</span>": <span class="hljs-value"><span class="hljs-string">"2020-04-25 11:26:39"</span></span>,
+      "<span class="hljs-attribute">guid</span>": <span class="hljs-value"><span class="hljs-string">"PMQWH484ECF2D13SQP330715DNQ6774B71Z4"</span></span>,
+      "<span class="hljs-attribute">nom</span>": <span class="hljs-value"><span class="hljs-string">"DOE"</span></span>,
+      "<span class="hljs-attribute">prenom</span>": <span class="hljs-value"><span class="hljs-string">"John"</span>
+    </span>}
+  ]
+</span>}</code></pre><div style="height: 1px;"></div><h5>Schema</h5><pre><code>{
+  "<span class="hljs-attribute">$schema</span>": <span class="hljs-value"><span class="hljs-string">"http://json-schema.org/draft-04/schema#"</span></span>,
+  "<span class="hljs-attribute">type</span>": <span class="hljs-value"><span class="hljs-string">"object"</span></span>,
+  "<span class="hljs-attribute">properties</span>": <span class="hljs-value">{
+    "<span class="hljs-attribute">usagers</span>": <span class="hljs-value">{
+      "<span class="hljs-attribute">type</span>": <span class="hljs-value"><span class="hljs-string">"array"</span></span>,
+      "<span class="hljs-attribute">items</span>": <span class="hljs-value">{
+        "<span class="hljs-attribute">type</span>": <span class="hljs-value"><span class="hljs-string">"object"</span></span>,
+        "<span class="hljs-attribute">properties</span>": <span class="hljs-value">{
+          "<span class="hljs-attribute">libelle</span>": <span class="hljs-value">{
+            "<span class="hljs-attribute">type</span>": <span class="hljs-value"><span class="hljs-string">"string"</span></span>,
+            "<span class="hljs-attribute">description</span>": <span class="hljs-value"><span class="hljs-string">"Le libelle de la formation ou du parcours"</span>
+          </span>}</span>,
+          "<span class="hljs-attribute">statut</span>": <span class="hljs-value">{
+            "<span class="hljs-attribute">type</span>": <span class="hljs-value"><span class="hljs-string">"string"</span></span>,
+            "<span class="hljs-attribute">enum</span>": <span class="hljs-value">[
+              <span class="hljs-string">"I"</span>,
+              <span class="hljs-string">"not attempted"</span>,
+              <span class="hljs-string">"incomplete"</span>,
+              <span class="hljs-string">"completed"</span>,
+              <span class="hljs-string">"passed"</span>,
+              <span class="hljs-string">"failed"</span>
+            ]</span>,
+            "<span class="hljs-attribute">description</span>": <span class="hljs-value"><span class="hljs-string">"Le status de la formation ou du parcours"</span>
+          </span>}</span>,
+          "<span class="hljs-attribute">avancement</span>": <span class="hljs-value">{
+            "<span class="hljs-attribute">type</span>": <span class="hljs-value"><span class="hljs-string">"number"</span></span>,
+            "<span class="hljs-attribute">description</span>": <span class="hljs-value"><span class="hljs-string">"Le pourcentage d'avancement actuel en pourcent"</span>
+          </span>}</span>,
+          "<span class="hljs-attribute">connexions</span>": <span class="hljs-value">{
+            "<span class="hljs-attribute">type</span>": <span class="hljs-value"><span class="hljs-string">"number"</span></span>,
+            "<span class="hljs-attribute">description</span>": <span class="hljs-value"><span class="hljs-string">"Le nombre actuel de connection au module ou au parcours"</span>
+          </span>}</span>,
+          "<span class="hljs-attribute">temps</span>": <span class="hljs-value">{
+            "<span class="hljs-attribute">type</span>": <span class="hljs-value"><span class="hljs-string">"number"</span></span>,
+            "<span class="hljs-attribute">description</span>": <span class="hljs-value"><span class="hljs-string">"Le temps de connexion au module ou au parcours en secondes"</span>
+          </span>}</span>,
+          "<span class="hljs-attribute">date_derniere_connexion</span>": <span class="hljs-value">{
+            "<span class="hljs-attribute">type</span>": <span class="hljs-value"><span class="hljs-string">"string"</span></span>,
+            "<span class="hljs-attribute">description</span>": <span class="hljs-value"><span class="hljs-string">"La date de dernière connexion au module au format `YYYY-mm-dd hh:ii:ss`"</span>
+          </span>}</span>,
+          "<span class="hljs-attribute">guid</span>": <span class="hljs-value">{
+            "<span class="hljs-attribute">type</span>": <span class="hljs-value"><span class="hljs-string">"string"</span></span>,
+            "<span class="hljs-attribute">description</span>": <span class="hljs-value"><span class="hljs-string">"l'identifiant unique (GUID) de l'utilisateur"</span>
+          </span>}</span>,
+          "<span class="hljs-attribute">nom</span>": <span class="hljs-value">{
+            "<span class="hljs-attribute">type</span>": <span class="hljs-value"><span class="hljs-string">"string"</span></span>,
+            "<span class="hljs-attribute">description</span>": <span class="hljs-value"><span class="hljs-string">"Le nom de l'utilisateur"</span>
+          </span>}</span>,
+          "<span class="hljs-attribute">prenom</span>": <span class="hljs-value">{
+            "<span class="hljs-attribute">type</span>": <span class="hljs-value"><span class="hljs-string">"string"</span></span>,
+            "<span class="hljs-attribute">description</span>": <span class="hljs-value"><span class="hljs-string">"Le prenom de l'utilisateur"</span>
+          </span>}
+        </span>}
+      </span>}</span>,
+      "<span class="hljs-attribute">description</span>": <span class="hljs-value"><span class="hljs-string">"la liste des suivis par usager"</span>
+    </span>}
+  </span>}
+</span>}</code></pre><div style="height: 1px;"></div></div></div></div></div><div id="reporting-get-suivi-évaluations" class="resource"><h3 class="resource-heading">Get suivi évaluations <a href="https://dev-pf.onlineformapro.com/wcopy/os/api/documentation/index.php#reporting-get-suivi-%C3%A9valuations" class="permalink">&nbsp;¶</a></h3><p>Cette action permet de récuperer le suivi des évaluations pre et post.</p>
+                    <div id="reporting-get-suivi-évaluations-post" class="action post"><h4 class="action-heading"><div class="name">Récuperer le suivi des évaluation</div><a href="https://dev-pf.onlineformapro.com/wcopy/os/api/documentation/index.php#reporting-get-suivi-%C3%A9valuations-post" class="method post">POST</a><code class="uri">/php5/restapi/reporting/evaluations</code></h4><h4>Example URI</h4><div class="definition"><span class="method post">POST</span>&nbsp;<span class="uri"><span class="hostname">dev-pf.onlineformapro.com</span>/php5/restapi/reporting/evaluations</span></div><div class="title"><strong>URI Parameters</strong><div class="collapse-button show"><span class="close">Hide</span><span class="open">Show</span></div></div><div class="collapse-content" style="max-height: 312px;"><dl class="inner"><dt>utilisateur</dt><dd><code>string</code>&nbsp;<span>(optional)</span>&nbsp;<span class="text-muted example"><strong>Example:&nbsp;</strong><span>PMQWH484ECF2D13SQP330715DNQ6774B71Z4</span></span><p>L’identifiant unique (GUID) de l’utilisateur souhaité. Si non spécifié, les informations de tout les utilisateurs sont retournées.</p>
+                                </dd><dt>theme</dt><dd><code>string</code>&nbsp;<span>(optional)</span>&nbsp;<span class="text-muted example"><strong>Example:&nbsp;</strong><span>24578</span></span><p>L’id du theme pour lequel on souhaite récuperer le suivi. Si le paramètre <code>utilisateur</code> n’est pas spécifié, le paramètre <code>theme</code> ou le paramètre <code>soustheme</code> est obligatoire.</p>
+                                </dd><dt>soustheme</dt><dd><code>string</code>&nbsp;<span>(optional)</span>&nbsp;<span class="text-muted example"><strong>Example:&nbsp;</strong><span>10247</span></span><p>L’id du sous-theme pour lequel on souhaite récuperer le suivi. Si le paramètre <code>utilisateur</code> n’est pas spécifié, le paramètre <code>theme</code> ou le paramètre <code>soustheme</code> est obligatoire.</p>
+                                </dd><dt>type</dt><dd><code>string</code>&nbsp;<span>(optional)</span>&nbsp;<span class="text-muted example"><strong>Example:&nbsp;</strong><span>pre</span></span><p>Le type d’évaluation <code>pre</code> ou <code>post</code></p>
+                                </dd></dl></div><div class="title"><strong>Request</strong><div class="collapse-button show"><span class="close">Hide</span><span class="open">Show</span></div></div><div class="collapse-content" style="max-height: 233px;"><div class="inner"><h5>Headers</h5><pre><code><span class="hljs-attribute">Content-Type</span>: <span class="hljs-string">multipart/form-data</span><br><span class="hljs-attribute">Access-Token</span>: <span class="hljs-string">6GDLA5g17FJUmw4DO5cfFV7QMPLAbfRo</span></code></pre><div style="height: 1px;"></div><h5>Body</h5><pre><code>utilisateur=PMQWH484ECF2D13SQP330715DNQ6774B71Z4</code></pre><div style="height: 1px;"></div></div></div><div class="title"><strong>Response&nbsp;&nbsp;<code>200</code></strong><div class="collapse-button show"><span class="close">Hide</span><span class="open">Show</span></div></div><div class="collapse-content" style="max-height: 4432px;"><div class="inner"><h5>Headers</h5><pre><code><span class="hljs-attribute">Content-Type</span>: <span class="hljs-string">application/json</span></code></pre><div style="height: 1px;"></div><h5>Body</h5><pre><code>{
+  "<span class="hljs-attribute">usagers</span>": <span class="hljs-value">[
+    {
+      "<span class="hljs-attribute">guid</span>": <span class="hljs-value"><span class="hljs-string">"PMQWH484ECF2D13SQP330715DNQ6774B71Z4"</span></span>,
+      "<span class="hljs-attribute">nom</span>": <span class="hljs-value"><span class="hljs-string">"DOE"</span></span>,
+      "<span class="hljs-attribute">prenom</span>": <span class="hljs-value"><span class="hljs-string">"John"</span></span>,
+      "<span class="hljs-attribute">eval_pre</span>": <span class="hljs-value">[
+        {
+          "<span class="hljs-attribute">idsoustheme</span>": <span class="hljs-value"><span class="hljs-number">16547</span></span>,
+          "<span class="hljs-attribute">id</span>": <span class="hljs-value"><span class="hljs-number">16547</span></span>,
+          "<span class="hljs-attribute">libellesoustheme</span>": <span class="hljs-value"><span class="hljs-string">"Nom du soustheme"</span></span>,
+          "<span class="hljs-attribute">libelle</span>": <span class="hljs-value"><span class="hljs-string">"Nom de l'evaluation"</span></span>,
+          "<span class="hljs-attribute">statut</span>": <span class="hljs-value"><span class="hljs-string">"I"</span></span>,
+          "<span class="hljs-attribute">avancement</span>": <span class="hljs-value"><span class="hljs-number">100</span></span>,
+          "<span class="hljs-attribute">score_min</span>": <span class="hljs-value"><span class="hljs-number">0</span></span>,
+          "<span class="hljs-attribute">score_max</span>": <span class="hljs-value"><span class="hljs-number">100</span></span>,
+          "<span class="hljs-attribute">score_raw</span>": <span class="hljs-value"><span class="hljs-number">86</span></span>,
+          "<span class="hljs-attribute">score</span>": <span class="hljs-value"><span class="hljs-number">0.86</span></span>,
+          "<span class="hljs-attribute">connexions</span>": <span class="hljs-value"><span class="hljs-number">4</span></span>,
+          "<span class="hljs-attribute">temps</span>": <span class="hljs-value"><span class="hljs-number">1487</span></span>,
+          "<span class="hljs-attribute">date_derniere_connexion</span>": <span class="hljs-value"><span class="hljs-string">"2020-04-25 11:26:39"</span>
+        </span>}
+      ]</span>,
+      "<span class="hljs-attribute">eval_post</span>": <span class="hljs-value">[
+        {
+          "<span class="hljs-attribute">idsoustheme</span>": <span class="hljs-value"><span class="hljs-number">16547</span></span>,
+          "<span class="hljs-attribute">id</span>": <span class="hljs-value"><span class="hljs-number">16547</span></span>,
+          "<span class="hljs-attribute">libellesoustheme</span>": <span class="hljs-value"><span class="hljs-string">"Nom du soustheme"</span></span>,
+          "<span class="hljs-attribute">libelle</span>": <span class="hljs-value"><span class="hljs-string">"Nom de l'evaluation"</span></span>,
+          "<span class="hljs-attribute">statut</span>": <span class="hljs-value"><span class="hljs-string">"I"</span></span>,
+          "<span class="hljs-attribute">avancement</span>": <span class="hljs-value"><span class="hljs-number">100</span></span>,
+          "<span class="hljs-attribute">score_min</span>": <span class="hljs-value"><span class="hljs-number">0</span></span>,
+          "<span class="hljs-attribute">score_max</span>": <span class="hljs-value"><span class="hljs-number">100</span></span>,
+          "<span class="hljs-attribute">score_raw</span>": <span class="hljs-value"><span class="hljs-number">86</span></span>,
+          "<span class="hljs-attribute">score</span>": <span class="hljs-value"><span class="hljs-number">0.86</span></span>,
+          "<span class="hljs-attribute">connexions</span>": <span class="hljs-value"><span class="hljs-number">4</span></span>,
+          "<span class="hljs-attribute">temps</span>": <span class="hljs-value"><span class="hljs-number">1487</span></span>,
+          "<span class="hljs-attribute">date_derniere_connexion</span>": <span class="hljs-value"><span class="hljs-string">"2020-04-25 11:26:39"</span>
+        </span>}
+      ]
+    </span>}
+  ]
+</span>}</code></pre><div style="height: 1px;"></div><h5>Schema</h5><pre><code>{
+  "<span class="hljs-attribute">$schema</span>": <span class="hljs-value"><span class="hljs-string">"http://json-schema.org/draft-04/schema#"</span></span>,
+  "<span class="hljs-attribute">type</span>": <span class="hljs-value"><span class="hljs-string">"object"</span></span>,
+  "<span class="hljs-attribute">properties</span>": <span class="hljs-value">{
+    "<span class="hljs-attribute">usagers</span>": <span class="hljs-value">{
+      "<span class="hljs-attribute">type</span>": <span class="hljs-value"><span class="hljs-string">"array"</span></span>,
+      "<span class="hljs-attribute">items</span>": <span class="hljs-value">{
+        "<span class="hljs-attribute">type</span>": <span class="hljs-value"><span class="hljs-string">"object"</span></span>,
+        "<span class="hljs-attribute">properties</span>": <span class="hljs-value">{
+          "<span class="hljs-attribute">guid</span>": <span class="hljs-value">{
+            "<span class="hljs-attribute">type</span>": <span class="hljs-value"><span class="hljs-string">"string"</span></span>,
+            "<span class="hljs-attribute">description</span>": <span class="hljs-value"><span class="hljs-string">"l'identifiant unique (GUID) de l'utilisateur"</span>
+          </span>}</span>,
+          "<span class="hljs-attribute">nom</span>": <span class="hljs-value">{
+            "<span class="hljs-attribute">type</span>": <span class="hljs-value"><span class="hljs-string">"string"</span></span>,
+            "<span class="hljs-attribute">description</span>": <span class="hljs-value"><span class="hljs-string">"Le nom de l'utilisateur"</span>
+          </span>}</span>,
+          "<span class="hljs-attribute">prenom</span>": <span class="hljs-value">{
+            "<span class="hljs-attribute">type</span>": <span class="hljs-value"><span class="hljs-string">"string"</span></span>,
+            "<span class="hljs-attribute">description</span>": <span class="hljs-value"><span class="hljs-string">"Le prenom de l'utilisateur"</span>
+          </span>}</span>,
+          "<span class="hljs-attribute">eval_pre</span>": <span class="hljs-value">{
+            "<span class="hljs-attribute">type</span>": <span class="hljs-value"><span class="hljs-string">"array"</span></span>,
+            "<span class="hljs-attribute">items</span>": <span class="hljs-value">{
+              "<span class="hljs-attribute">type</span>": <span class="hljs-value"><span class="hljs-string">"object"</span></span>,
+              "<span class="hljs-attribute">properties</span>": <span class="hljs-value">{
+                "<span class="hljs-attribute">idsoustheme</span>": <span class="hljs-value">{
+                  "<span class="hljs-attribute">type</span>": <span class="hljs-value"><span class="hljs-string">"number"</span></span>,
+                  "<span class="hljs-attribute">description</span>": <span class="hljs-value"><span class="hljs-string">"L'id du soustheme de l'évaluation"</span>
+                </span>}</span>,
+                "<span class="hljs-attribute">id</span>": <span class="hljs-value">{
+                  "<span class="hljs-attribute">type</span>": <span class="hljs-value"><span class="hljs-string">"number"</span></span>,
+                  "<span class="hljs-attribute">description</span>": <span class="hljs-value"><span class="hljs-string">"L'id de l'évaluation"</span>
+                </span>}</span>,
+                "<span class="hljs-attribute">libellesoustheme</span>": <span class="hljs-value">{
+                  "<span class="hljs-attribute">type</span>": <span class="hljs-value"><span class="hljs-string">"string"</span></span>,
+                  "<span class="hljs-attribute">description</span>": <span class="hljs-value"><span class="hljs-string">"Le libelle du soustheme"</span>
+                </span>}</span>,
+                "<span class="hljs-attribute">libelle</span>": <span class="hljs-value">{
+                  "<span class="hljs-attribute">type</span>": <span class="hljs-value"><span class="hljs-string">"string"</span></span>,
+                  "<span class="hljs-attribute">description</span>": <span class="hljs-value"><span class="hljs-string">"Le libelle de l'évaluation"</span>
+                </span>}</span>,
+                "<span class="hljs-attribute">statut</span>": <span class="hljs-value">{
+                  "<span class="hljs-attribute">type</span>": <span class="hljs-value"><span class="hljs-string">"string"</span></span>,
+                  "<span class="hljs-attribute">enum</span>": <span class="hljs-value">[
+                    <span class="hljs-string">"I"</span>,
+                    <span class="hljs-string">"not attempted"</span>,
+                    <span class="hljs-string">"incomplete"</span>,
+                    <span class="hljs-string">"completed"</span>,
+                    <span class="hljs-string">"passed"</span>,
+                    <span class="hljs-string">"failed"</span>
+                  ]</span>,
+                  "<span class="hljs-attribute">description</span>": <span class="hljs-value"><span class="hljs-string">"Le status de l'évaluation"</span>
+                </span>}</span>,
+                "<span class="hljs-attribute">avancement</span>": <span class="hljs-value">{
+                  "<span class="hljs-attribute">type</span>": <span class="hljs-value"><span class="hljs-string">"number"</span></span>,
+                  "<span class="hljs-attribute">description</span>": <span class="hljs-value"><span class="hljs-string">"Le pourcentage d'avancement actuel en pourcent"</span>
+                </span>}</span>,
+                "<span class="hljs-attribute">score_min</span>": <span class="hljs-value">{
+                  "<span class="hljs-attribute">type</span>": <span class="hljs-value"><span class="hljs-string">"number"</span></span>,
+                  "<span class="hljs-attribute">description</span>": <span class="hljs-value"><span class="hljs-string">"Le score minimum possible de l'évaluation"</span>
+                </span>}</span>,
+                "<span class="hljs-attribute">score_max</span>": <span class="hljs-value">{
+                  "<span class="hljs-attribute">type</span>": <span class="hljs-value"><span class="hljs-string">"number"</span></span>,
+                  "<span class="hljs-attribute">description</span>": <span class="hljs-value"><span class="hljs-string">"Le score maximum possible de l'évaluation"</span>
+                </span>}</span>,
+                "<span class="hljs-attribute">score_raw</span>": <span class="hljs-value">{
+                  "<span class="hljs-attribute">type</span>": <span class="hljs-value"><span class="hljs-string">"number"</span></span>,
+                  "<span class="hljs-attribute">description</span>": <span class="hljs-value"><span class="hljs-string">"Le score de l'utilisateur"</span>
+                </span>}</span>,
+                "<span class="hljs-attribute">score</span>": <span class="hljs-value">{
+                  "<span class="hljs-attribute">type</span>": <span class="hljs-value"><span class="hljs-string">"number"</span></span>,
+                  "<span class="hljs-attribute">description</span>": <span class="hljs-value"><span class="hljs-string">"Le score de l'utilisateur en pourcent (valeur entre 0 et 1)"</span>
+                </span>}</span>,
+                "<span class="hljs-attribute">connexions</span>": <span class="hljs-value">{
+                  "<span class="hljs-attribute">type</span>": <span class="hljs-value"><span class="hljs-string">"number"</span></span>,
+                  "<span class="hljs-attribute">description</span>": <span class="hljs-value"><span class="hljs-string">"Le nombre actuel de connection à l'évaluation"</span>
+                </span>}</span>,
+                "<span class="hljs-attribute">temps</span>": <span class="hljs-value">{
+                  "<span class="hljs-attribute">type</span>": <span class="hljs-value"><span class="hljs-string">"number"</span></span>,
+                  "<span class="hljs-attribute">description</span>": <span class="hljs-value"><span class="hljs-string">"Le temps de connexion à l'évaluation"</span>
+                </span>}</span>,
+                "<span class="hljs-attribute">date_derniere_connexion</span>": <span class="hljs-value">{
+                  "<span class="hljs-attribute">type</span>": <span class="hljs-value"><span class="hljs-string">"string"</span></span>,
+                  "<span class="hljs-attribute">description</span>": <span class="hljs-value"><span class="hljs-string">"La date de dernière connexion à l'évaluation au format `YYYY-mm-dd hh:ii:ss`"</span>
+                </span>}
+              </span>}
+            </span>}</span>,
+            "<span class="hljs-attribute">description</span>": <span class="hljs-value"><span class="hljs-string">"la liste des suivis des évaluation pre"</span>
+          </span>}</span>,
+          "<span class="hljs-attribute">eval_post</span>": <span class="hljs-value">{
+            "<span class="hljs-attribute">type</span>": <span class="hljs-value"><span class="hljs-string">"array"</span></span>,
+            "<span class="hljs-attribute">items</span>": <span class="hljs-value">{
+              "<span class="hljs-attribute">type</span>": <span class="hljs-value"><span class="hljs-string">"object"</span></span>,
+              "<span class="hljs-attribute">properties</span>": <span class="hljs-value">{
+                "<span class="hljs-attribute">idsoustheme</span>": <span class="hljs-value">{
+                  "<span class="hljs-attribute">type</span>": <span class="hljs-value"><span class="hljs-string">"number"</span></span>,
+                  "<span class="hljs-attribute">description</span>": <span class="hljs-value"><span class="hljs-string">"L'id du soustheme de l'évaluation"</span>
+                </span>}</span>,
+                "<span class="hljs-attribute">id</span>": <span class="hljs-value">{
+                  "<span class="hljs-attribute">type</span>": <span class="hljs-value"><span class="hljs-string">"number"</span></span>,
+                  "<span class="hljs-attribute">description</span>": <span class="hljs-value"><span class="hljs-string">"L'id de l'évaluation"</span>
+                </span>}</span>,
+                "<span class="hljs-attribute">libellesoustheme</span>": <span class="hljs-value">{
+                  "<span class="hljs-attribute">type</span>": <span class="hljs-value"><span class="hljs-string">"string"</span></span>,
+                  "<span class="hljs-attribute">description</span>": <span class="hljs-value"><span class="hljs-string">"Le libelle du soustheme"</span>
+                </span>}</span>,
+                "<span class="hljs-attribute">libelle</span>": <span class="hljs-value">{
+                  "<span class="hljs-attribute">type</span>": <span class="hljs-value"><span class="hljs-string">"string"</span></span>,
+                  "<span class="hljs-attribute">description</span>": <span class="hljs-value"><span class="hljs-string">"Le libelle de l'évaluation"</span>
+                </span>}</span>,
+                "<span class="hljs-attribute">statut</span>": <span class="hljs-value">{
+                  "<span class="hljs-attribute">type</span>": <span class="hljs-value"><span class="hljs-string">"string"</span></span>,
+                  "<span class="hljs-attribute">enum</span>": <span class="hljs-value">[
+                    <span class="hljs-string">"I"</span>,
+                    <span class="hljs-string">"not attempted"</span>,
+                    <span class="hljs-string">"incomplete"</span>,
+                    <span class="hljs-string">"completed"</span>,
+                    <span class="hljs-string">"passed"</span>,
+                    <span class="hljs-string">"failed"</span>
+                  ]</span>,
+                  "<span class="hljs-attribute">description</span>": <span class="hljs-value"><span class="hljs-string">"Le status de l'évaluation"</span>
+                </span>}</span>,
+                "<span class="hljs-attribute">avancement</span>": <span class="hljs-value">{
+                  "<span class="hljs-attribute">type</span>": <span class="hljs-value"><span class="hljs-string">"number"</span></span>,
+                  "<span class="hljs-attribute">description</span>": <span class="hljs-value"><span class="hljs-string">"Le pourcentage d'avancement actuel en pourcent"</span>
+                </span>}</span>,
+                "<span class="hljs-attribute">score_min</span>": <span class="hljs-value">{
+                  "<span class="hljs-attribute">type</span>": <span class="hljs-value"><span class="hljs-string">"number"</span></span>,
+                  "<span class="hljs-attribute">description</span>": <span class="hljs-value"><span class="hljs-string">"Le score minimum possible de l'évaluation"</span>
+                </span>}</span>,
+                "<span class="hljs-attribute">score_max</span>": <span class="hljs-value">{
+                  "<span class="hljs-attribute">type</span>": <span class="hljs-value"><span class="hljs-string">"number"</span></span>,
+                  "<span class="hljs-attribute">description</span>": <span class="hljs-value"><span class="hljs-string">"Le score maximum possible de l'évaluation"</span>
+                </span>}</span>,
+                "<span class="hljs-attribute">score_raw</span>": <span class="hljs-value">{
+                  "<span class="hljs-attribute">type</span>": <span class="hljs-value"><span class="hljs-string">"number"</span></span>,
+                  "<span class="hljs-attribute">description</span>": <span class="hljs-value"><span class="hljs-string">"Le score de l'utilisateur"</span>
+                </span>}</span>,
+                "<span class="hljs-attribute">score</span>": <span class="hljs-value">{
+                  "<span class="hljs-attribute">type</span>": <span class="hljs-value"><span class="hljs-string">"number"</span></span>,
+                  "<span class="hljs-attribute">description</span>": <span class="hljs-value"><span class="hljs-string">"Le score de l'utilisateur en pourcent (valeur entre 0 et 1)"</span>
+                </span>}</span>,
+                "<span class="hljs-attribute">connexions</span>": <span class="hljs-value">{
+                  "<span class="hljs-attribute">type</span>": <span class="hljs-value"><span class="hljs-string">"number"</span></span>,
+                  "<span class="hljs-attribute">description</span>": <span class="hljs-value"><span class="hljs-string">"Le nombre actuel de connection à l'évaluation"</span>
+                </span>}</span>,
+                "<span class="hljs-attribute">temps</span>": <span class="hljs-value">{
+                  "<span class="hljs-attribute">type</span>": <span class="hljs-value"><span class="hljs-string">"number"</span></span>,
+                  "<span class="hljs-attribute">description</span>": <span class="hljs-value"><span class="hljs-string">"Le temps de connexion à l'évaluation"</span>
+                </span>}</span>,
+                "<span class="hljs-attribute">date_derniere_connexion</span>": <span class="hljs-value">{
+                  "<span class="hljs-attribute">type</span>": <span class="hljs-value"><span class="hljs-string">"string"</span></span>,
+                  "<span class="hljs-attribute">description</span>": <span class="hljs-value"><span class="hljs-string">"La date de dernière connexion à l'évaluation au format `YYYY-mm-dd hh:ii:ss`"</span>
+                </span>}
+              </span>}
+            </span>}</span>,
+            "<span class="hljs-attribute">description</span>": <span class="hljs-value"><span class="hljs-string">"la liste des suivis des évaluation post"</span>
+          </span>}
+        </span>}
+      </span>}</span>,
+      "<span class="hljs-attribute">description</span>": <span class="hljs-value"><span class="hljs-string">"la liste des suivis des évaluations par usager"</span>
+    </span>}
+  </span>}
+</span>}</code></pre><div style="height: 1px;"></div></div></div></div></div><div id="reporting-get-suivi-recap" class="resource"><h3 class="resource-heading">Get suivi recap <a href="https://dev-pf.onlineformapro.com/wcopy/os/api/documentation/index.php#reporting-get-suivi-recap" class="permalink">&nbsp;¶</a></h3><p>Cette action permet de récuperer le recapitulatif du suivi des thèmes par utilisateur.</p>
+                    <div id="reporting-get-suivi-recap-post" class="action post"><h4 class="action-heading"><div class="name">Récuperer le recapitulatif du suivi</div><a href="https://dev-pf.onlineformapro.com/wcopy/os/api/documentation/index.php#reporting-get-suivi-recap-post" class="method post">POST</a><code class="uri">/php5/restapi/reporting/suivi-recap</code></h4><h4>Example URI</h4><div class="definition"><span class="method post">POST</span>&nbsp;<span class="uri"><span class="hostname">dev-pf.onlineformapro.com</span>/php5/restapi/reporting/suivi-recap</span></div><div class="title"><strong>URI Parameters</strong><div class="collapse-button show"><span class="close">Hide</span><span class="open">Show</span></div></div><div class="collapse-content" style="max-height: 84px;"><dl class="inner"><dt>utilisateur</dt><dd><code>string</code>&nbsp;<span>(optional)</span>&nbsp;<span class="text-muted example"><strong>Example:&nbsp;</strong><span>[]</span></span><p>Une liste d’identifiants uniques (GUID) des utilisateurs dont on souhaite récuperer le suivi.</p>
+                                </dd></dl></div><div class="title"><strong>Request</strong><div class="collapse-button"><span class="close">Hide</span><span class="open">Show</span></div></div><div class="collapse-content"><div class="inner"><h5>Headers</h5><pre><code><span class="hljs-attribute">Content-Type</span>: <span class="hljs-string">multipart/form-data</span><br><span class="hljs-attribute">Access-Token</span>: <span class="hljs-string">6GDLA5g17FJUmw4DO5cfFV7QMPLAbfRo</span></code></pre><div style="height: 1px;"></div><h5>Body</h5><pre><code>utilisateur=[<span class="hljs-string">"PMQWH484ECF2D13SQP330715DNQ6774B71Z4"</span>]</code></pre><div style="height: 1px;"></div></div></div><div class="title"><strong>Response&nbsp;&nbsp;<code>200</code></strong><div class="collapse-button"><span class="close">Hide</span><span class="open">Show</span></div></div><div class="collapse-content"><div class="inner"><h5>Headers</h5><pre><code><span class="hljs-attribute">Content-Type</span>: <span class="hljs-string">application/json</span></code></pre><div style="height: 1px;"></div><h5>Body</h5><pre><code>{
+  "<span class="hljs-attribute">PMQWH484ECF2D13SQP330715DNQ6774B71Z4</span>": <span class="hljs-value">{
+    "<span class="hljs-attribute">nom</span>": <span class="hljs-value"><span class="hljs-string">"DOE"</span></span>,
+    "<span class="hljs-attribute">prenom</span>": <span class="hljs-value"><span class="hljs-string">"John"</span></span>,
+    "<span class="hljs-attribute">temps</span>": <span class="hljs-value"><span class="hljs-number">3247</span></span>,
+    "<span class="hljs-attribute">themes</span>": <span class="hljs-value">{
+      "<span class="hljs-attribute">nom</span>": <span class="hljs-value"><span class="hljs-string">"Nom du thème"</span></span>,
+      "<span class="hljs-attribute">avancement</span>": <span class="hljs-value"><span class="hljs-number">100</span></span>,
+      "<span class="hljs-attribute">temps</span>": <span class="hljs-value"><span class="hljs-number">1487</span></span>,
+      "<span class="hljs-attribute">date_debut</span>": <span class="hljs-value"><span class="hljs-string">"2018-03-25 14:00:00"</span></span>,
+      "<span class="hljs-attribute">date_fin</span>": <span class="hljs-value"><span class="hljs-string">"2018-03-25 18:30:00"</span>
+    </span>}
+  </span>}
+</span>}</code></pre><div style="height: 1px;"></div><h5>Schema</h5><pre><code>{
+  "<span class="hljs-attribute">$schema</span>": <span class="hljs-value"><span class="hljs-string">"http://json-schema.org/draft-04/schema#"</span></span>,
+  "<span class="hljs-attribute">type</span>": <span class="hljs-value"><span class="hljs-string">"object"</span></span>,
+  "<span class="hljs-attribute">properties</span>": <span class="hljs-value">{
+    "<span class="hljs-attribute">PMQWH484ECF2D13SQP330715DNQ6774B71Z4</span>": <span class="hljs-value">{
+      "<span class="hljs-attribute">type</span>": <span class="hljs-value"><span class="hljs-string">"object"</span></span>,
+      "<span class="hljs-attribute">properties</span>": <span class="hljs-value">{
+        "<span class="hljs-attribute">nom</span>": <span class="hljs-value">{
+          "<span class="hljs-attribute">type</span>": <span class="hljs-value"><span class="hljs-string">"string"</span></span>,
+          "<span class="hljs-attribute">description</span>": <span class="hljs-value"><span class="hljs-string">"Le nom de l'utilisateur"</span>
+        </span>}</span>,
+        "<span class="hljs-attribute">prenom</span>": <span class="hljs-value">{
+          "<span class="hljs-attribute">type</span>": <span class="hljs-value"><span class="hljs-string">"string"</span></span>,
+          "<span class="hljs-attribute">description</span>": <span class="hljs-value"><span class="hljs-string">"Le prenom de l'utilisateur"</span>
+        </span>}</span>,
+        "<span class="hljs-attribute">temps</span>": <span class="hljs-value">{
+          "<span class="hljs-attribute">type</span>": <span class="hljs-value"><span class="hljs-string">"number"</span></span>,
+          "<span class="hljs-attribute">description</span>": <span class="hljs-value"><span class="hljs-string">"Le temps de suivi global de l'usager"</span>
+        </span>}</span>,
+        "<span class="hljs-attribute">themes</span>": <span class="hljs-value">{
+          "<span class="hljs-attribute">type</span>": <span class="hljs-value"><span class="hljs-string">"object"</span></span>,
+          "<span class="hljs-attribute">properties</span>": <span class="hljs-value">{
+            "<span class="hljs-attribute">nom</span>": <span class="hljs-value">{
+              "<span class="hljs-attribute">type</span>": <span class="hljs-value"><span class="hljs-string">"string"</span></span>,
+              "<span class="hljs-attribute">description</span>": <span class="hljs-value"><span class="hljs-string">"Le libellé du thème"</span>
+            </span>}</span>,
+            "<span class="hljs-attribute">avancement</span>": <span class="hljs-value">{
+              "<span class="hljs-attribute">type</span>": <span class="hljs-value"><span class="hljs-string">"number"</span></span>,
+              "<span class="hljs-attribute">description</span>": <span class="hljs-value"><span class="hljs-string">"Le pourcentage d'avancement actuel en pourcent"</span>
+            </span>}</span>,
+            "<span class="hljs-attribute">temps</span>": <span class="hljs-value">{
+              "<span class="hljs-attribute">type</span>": <span class="hljs-value"><span class="hljs-string">"number"</span></span>,
+              "<span class="hljs-attribute">description</span>": <span class="hljs-value"><span class="hljs-string">"Le temps de suivi"</span>
+            </span>}</span>,
+            "<span class="hljs-attribute">date_debut</span>": <span class="hljs-value">{
+              "<span class="hljs-attribute">type</span>": <span class="hljs-value"><span class="hljs-string">"string"</span></span>,
+              "<span class="hljs-attribute">description</span>": <span class="hljs-value"><span class="hljs-string">"La date de début du suivi au format `YYYY-mm-dd hh:ii:ss`"</span>
+            </span>}</span>,
+            "<span class="hljs-attribute">date_fin</span>": <span class="hljs-value">{
+              "<span class="hljs-attribute">type</span>": <span class="hljs-value"><span class="hljs-string">"string"</span></span>,
+              "<span class="hljs-attribute">description</span>": <span class="hljs-value"><span class="hljs-string">"La date de fin de du suivi au format `YYYY-mm-dd hh:ii:ss`"</span>
+            </span>}
+          </span>}</span>,
+          "<span class="hljs-attribute">description</span>": <span class="hljs-value"><span class="hljs-string">"Le recapitulatif de l'utilisateur par thème"</span>
+        </span>}
+      </span>}</span>,
+      "<span class="hljs-attribute">description</span>": <span class="hljs-value"><span class="hljs-string">"le recapitulatif de l'utilisateur avec le GUID \"PMQWH484ECF2D13SQP330715DNQ6774B71Z4\""</span>
+    </span>}
+  </span>}
+</span>}</code></pre><div style="height: 1px;"></div></div></div></div></div></section></div></div></div><p style="text-align: center;" class="text-muted">Generated by&nbsp;<a href="https://github.com/danielgtaylor/aglio" class="aglio">aglio</a>&nbsp;on 10 Mar 2022</p><script>/* eslint-env browser */
+	/* eslint quotes: [2, "single"] */
+	'use strict';
+	
+	/*
+	  Determine if a string ends with another string.
+	*/
+	function endsWith(str, suffix) {
+		return str.indexOf(suffix, str.length - suffix.length) !== -1;
+	}
+	
+	/*
+	  Get a list of direct child elements by class name.
+	*/
+	function childrenByClass(element, name) {
+		var filtered = [];
+		
+		for (var i = 0; i < element.children.length; i++) {
+			var child = element.children[i];
+			var classNames = child.className.split(' ');
+			if (classNames.indexOf(name) !== -1) {
+				filtered.push(child);
+			}
+		}
+		
+		return filtered;
+	}
+	
+	/*
+	  Get an array [width, height] of the window.
+	*/
+	function getWindowDimensions() {
+		var w = window,
+			d = document,
+			e = d.documentElement,
+			g = d.body,
+			x = w.innerWidth || e.clientWidth || g.clientWidth,
+			y = w.innerHeight || e.clientHeight || g.clientHeight;
+		
+		return [x, y];
+	}
+	
+	/*
+	  Collapse or show a request/response example.
+	*/
+	function toggleCollapseButton(event) {
+		var button = event.target.parentNode;
+		var content = button.parentNode.nextSibling;
+		var inner = content.children[0];
+		
+		if (button.className.indexOf('collapse-button') === -1) {
+			// Clicked without hitting the right element?
+			return;
+		}
+		
+		if (content.style.maxHeight && content.style.maxHeight !== '0px') {
+			// Currently showing, so let's hide it
+			button.className = 'collapse-button';
+			content.style.maxHeight = '0px';
+		} else {
+			// Currently hidden, so let's show it
+			button.className = 'collapse-button show';
+			content.style.maxHeight = inner.offsetHeight + 12 + 'px';
+		}
+	}
+	
+	function toggleTabButton(event) {
+		var i, index;
+		var button = event.target;
+		
+		// Get index of the current button.
+		var buttons = childrenByClass(button.parentNode, 'tab-button');
+		for (i = 0; i < buttons.length; i++) {
+			if (buttons[i] === button) {
+				index = i;
+				button.className = 'tab-button active';
+			} else {
+				buttons[i].className = 'tab-button';
+			}
+		}
+		
+		// Hide other tabs and show this one.
+		var tabs = childrenByClass(button.parentNode.parentNode, 'tab');
+		for (i = 0; i < tabs.length; i++) {
+			if (i === index) {
+				tabs[i].style.display = 'block';
+			} else {
+				tabs[i].style.display = 'none';
+			}
+		}
+	}
+	
+	/*
+	  Collapse or show a navigation menu. It will not be hidden unless it
+	  is currently selected or `force` has been passed.
+	*/
+	function toggleCollapseNav(event, force) {
+		var heading = event.target.parentNode;
+		var content = heading.nextSibling;
+		var inner = content.children[0];
+		
+		if (heading.className.indexOf('heading') === -1) {
+			// Clicked without hitting the right element?
+			return;
+		}
+		
+		if (content.style.maxHeight && content.style.maxHeight !== '0px') {
+			// Currently showing, so let's hide it, but only if this nav item
+			// is already selected. This prevents newly selected items from
+			// collapsing in an annoying fashion.
+			if (force || window.location.hash && endsWith(event.target.href, window.location.hash)) {
+				content.style.maxHeight = '0px';
+			}
+		} else {
+			// Currently hidden, so let's show it
+			content.style.maxHeight = inner.offsetHeight + 12 + 'px';
+		}
+	}
+	
+	/*
+	  Refresh the page after a live update from the server. This only
+	  works in live preview mode (using the `--server` parameter).
+	*/
+	function refresh(body) {
+		document.querySelector('body').className = 'preload';
+		document.body.innerHTML = body;
+		
+		// Re-initialize the page
+		init();
+		autoCollapse();
+		
+		document.querySelector('body').className = '';
+	}
+	
+	/*
+	  Determine which navigation items should be auto-collapsed to show as many
+	  as possible on the screen, based on the current window height. This also
+	  collapses them.
+	*/
+	function autoCollapse() {
+		var windowHeight = getWindowDimensions()[1];
+		var itemsHeight = 64; /* Account for some padding */
+		var itemsArray = Array.prototype.slice.call(
+			document.querySelectorAll('nav .resource-group .heading'));
+		
+		// Get the total height of the navigation items
+		itemsArray.forEach(function (item) {
+			itemsHeight += item.parentNode.offsetHeight;
+		});
+		
+		// Should we auto-collapse any nav items? Try to find the smallest item
+		// that can be collapsed to show all items on the screen. If not possible,
+		// then collapse the largest item and do it again. First, sort the items
+		// by height from smallest to largest.
+		var sortedItems = itemsArray.sort(function (a, b) {
+			return a.parentNode.offsetHeight - b.parentNode.offsetHeight;
+		});
+		
+		while (sortedItems.length && itemsHeight > windowHeight) {
+			for (var i = 0; i < sortedItems.length; i++) {
+				// Will collapsing this item help?
+				var itemHeight = sortedItems[i].nextSibling.offsetHeight;
+				if ((itemsHeight - itemHeight <= windowHeight) || i === sortedItems.length - 1) {
+					// It will, so let's collapse it, remove its content height from
+					// our total and then remove it from our list of candidates
+					// that can be collapsed.
+					itemsHeight -= itemHeight;
+					toggleCollapseNav({target: sortedItems[i].children[0]}, true);
+					sortedItems.splice(i, 1);
+					break;
+				}
+			}
+		}
+	}
+	
+	/*
+	  Initialize the interactive functionality of the page.
+	*/
+	function init() {
+		var i, j;
+		
+		// Make collapse buttons clickable
+		var buttons = document.querySelectorAll('.collapse-button');
+		for (i = 0; i < buttons.length; i++) {
+			buttons[i].onclick = toggleCollapseButton;
+			
+			// Show by default? Then toggle now.
+			if (buttons[i].className.indexOf('show') !== -1) {
+				toggleCollapseButton({target: buttons[i].children[0]});
+			}
+		}
+		
+		var responseCodes = document.querySelectorAll('.example-names');
+		for (i = 0; i < responseCodes.length; i++) {
+			var tabButtons = childrenByClass(responseCodes[i], 'tab-button');
+			for (j = 0; j < tabButtons.length; j++) {
+				tabButtons[j].onclick = toggleTabButton;
+				
+				// Show by default?
+				if (j === 0) {
+					toggleTabButton({target: tabButtons[j]});
+				}
+			}
+		}
+		
+		// Make nav items clickable to collapse/expand their content.
+		var navItems = document.querySelectorAll('nav .resource-group .heading');
+		for (i = 0; i < navItems.length; i++) {
+			navItems[i].onclick = toggleCollapseNav;
+			
+			// Show all by default
+			toggleCollapseNav({target: navItems[i].children[0]});
+		}
+	}
+	
+	// Initial call to set up buttons
+	init();
+	
+	window.onload = function () {
+		autoCollapse();
+		// Remove the `preload` class to enable animations
+		document.querySelector('body').className = '';
+	};
+</script></body></html>
